@@ -1,6 +1,7 @@
 import styles from "../styles/main.module.css";
 import { useState ,useEffect} from "react";
 import { useRouter } from "next/router";
+import Logo from "./Logo";
 
 const Main = () => {
 	const handleLogout = () => {
@@ -16,7 +17,7 @@ const Main = () => {
 	return (
 		<div className={styles.main_container}>
 			<nav className={styles.navbar}>
-				<h1>fakebook</h1>
+				<Logo/>
 				<button className={styles.white_btn} onClick={handleLogout}>
 					Logout
 				</button>	

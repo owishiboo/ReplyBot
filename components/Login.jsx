@@ -48,7 +48,7 @@ export default function SignIn() {
       const { data: res } = await axios.post(url, data);
       localStorage.setItem("token", res.data);
       console.log(res.message);
-      window.location = "/";
+      window.location = "/account";
     } catch (error) {
       if (
         error.response &&
@@ -119,7 +119,7 @@ export default function SignIn() {
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link href="/signup" variant="body2">
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>
