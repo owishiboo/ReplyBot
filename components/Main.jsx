@@ -4,12 +4,13 @@ import { useRouter } from "next/router";
 import Logo from "./Logo";
 
 const Main = () => {
+	const router = useRouter();
 	const handleLogout = () => {
 		localStorage.removeItem("token");
-		window.location.reload();
+		// window.location.reload();
+		window.location = "/login";
 	};
   let user="";
-  const router = useRouter();
   if (typeof window !== 'undefined') {
     user = localStorage.getItem("token");
   }

@@ -23,6 +23,7 @@ import Messages from './Messages';
 import Input from './Input';
 import { useState,useEffect } from 'react';
 import Header from './Header';
+import axios from 'axios';
 
 const useStyles = makeStyles({
   table: {
@@ -49,6 +50,26 @@ const Chat = () => {
 
   const [messages, setMessages] = useState([]);
 
+
+  const [replyMessage, setReplyMessage] = useState(null)
+
+  function getData(text) {
+    axios({
+      method: "GET",
+      url:"http://localhost:5000/api/chat/${text}",
+    })
+    .then((response) => {
+      const res =response.data
+      console.log(response.data);
+      setReplyMessage(response.response);
+    }).catch((error) => {
+      if (error.response) {
+        console.log(error.response)
+        console.log(error.response.status)
+        console.log(error.response.headers)
+        }
+    })}
+
   useEffect(() => {
     async function loadWelcomeMessage() {
       setMessages([
@@ -72,6 +93,7 @@ const Chat = () => {
     setMessages(newMessages);
   };
 
+  
 
   return (
       <div>
