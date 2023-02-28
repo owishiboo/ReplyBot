@@ -20,7 +20,7 @@ function Copyright(props) {
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        ReplyBot
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -35,6 +35,7 @@ export default function SignIn() {
   const handleSubmit = async(event) => {
     event.preventDefault();
     const one = new FormData(event.currentTarget);
+    const arr = one.get('email').split("@")
     console.log({
       email: one.get('email'),
       password: one.get('password'),
@@ -47,8 +48,8 @@ export default function SignIn() {
       const url = "/api/auth";
       const { data: res } = await axios.post(url, data);
       localStorage.setItem("token", res.data);
-      console.log(res.message);
-      window.location = "/account";
+      console.log(res.data);
+      window.location = `/profile/${arr[0]}`;
     } catch (error) {
       if (
         error.response &&
@@ -73,7 +74,7 @@ export default function SignIn() {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <Avatar sx={{ m: 1, bgcolor: '#607D8B' }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
@@ -108,18 +109,18 @@ export default function SignIn() {
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              sx={{ mt: 3, mb: 2 ,bgcolor:"#607D8B"}}
             >
               Sign In
             </Button>
             <Grid container>
               <Grid item xs>
-                <Link href="#" variant="body2">
+                <Link href="#" variant="body2" sx={{color:"#607D8B"}}>
                   Forgot password?
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="/signup" variant="body2">
+                <Link href="/signup" variant="body2" sx={{color:"#607D8B"}}>
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>

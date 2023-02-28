@@ -20,7 +20,7 @@ function Copyright(props) {
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        ReplyBot
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -101,7 +101,7 @@ export default function SignUp() {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <Avatar sx={{ m: 1, bgcolor: '#607D8B' }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
@@ -162,13 +162,13 @@ export default function SignUp() {
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              sx={{ mt: 3, mb: 2 ,bgcolor:"#607D8B"}}
             >
               Sign Up
             </Button>
             <Grid container justifyContent="center">
               <Grid item>
-                <Link href="/login" variant="body2">
+                <Link href="/login" variant="body2" sx={{color:"#607D8B"}}>
                   Already have an account? Sign in
                 </Link>
               </Grid>

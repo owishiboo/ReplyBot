@@ -10,9 +10,9 @@ export default async function handler(req, res) {
 		console.log('CONNECTED TO MONGO');
 		console.log("this is from api end" + req.body.email);
 			try {
-		const { error } = validate(req.body);
-		if (error)
-			return res.status(400).send({ message: error.details[0].message });
+		// const { error } = validate(req.body);
+		// if (error)
+		// 	return res.status(400).send({ message: error.details[0].message });
 
 		const user = await User.findOne({ email: req.body.email });
 		if (user)

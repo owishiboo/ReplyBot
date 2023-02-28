@@ -1,18 +1,3 @@
-# from flask import Flask, request, jsonify
-
-# app = Flask(__name__)
-
-# # Define your endpoints here
-# @app.route('/api',methods=['POST','GET'])
-# def index():
-#     return {"message":'Hello, World!'}
-
-# # Define more endpoints here as needed
-
-# # Run the app
-# if __name__ == '__main__':
-#     app.run()
-
 from flask import Flask,request
 from flask_cors import CORS,cross_origin
 import numpy as np
@@ -27,6 +12,7 @@ import json
 import pickle
 import warnings
 warnings.filterwarnings("ignore")
+import string
 
 api = Flask(__name__)
 
@@ -208,6 +194,37 @@ def my_response(text):
     resp = response(text)
     print(resp)
     return {"response": resp}
+
+
+def CheckWord(word,numbers):
+  found = False
+  with open("words_alpha.txt", "r") as file:
+      for line in file:
+          if line.rstrip() == word:
+            #   print("true")
+              found = True
+              return 0
+              break
+  if not found:
+    # print(word)
+    numbers.append(word);
+    return 1   
+
+
+@api.route('/api/banglish/<text>',methods=['GET','POST','OPTIONS'])
+@cross_origin(origin='*',headers=['Content-Type','Authorization'])
+def detect_banglish(text):
+    input = text
+    puncfix=input.translate(str.maketrans('', '', string.punctuation))
+    txt=puncfix.lower()
+    count=0
+    x = txt.split()
+    numbers=[]
+    for i in range(len(x)):
+    #print(x[i])
+        count = count + CheckWord(x[i],numbers)
+    ct=count/len(x)*100    
+    return {"words": json.dumps(numbers), "ratio":ct}
 
 # Run the app
 if __name__ == '__main__':

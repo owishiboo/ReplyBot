@@ -3,6 +3,8 @@ const bcrypt = require("bcrypt");
 const Joi = require("joi");
 import connectMongo from "../../utils/connectMongo";
 const { User } = require("../../models/user");
+var jwt = require('jsonwebtoken');
+
 export default async function addTest(req, res) {
 	try {
 	  console.log('CONNECTING TO MONGO');
@@ -10,9 +12,9 @@ export default async function addTest(req, res) {
 	  console.log('CONNECTED TO MONGO');
 	  console.log("this is from api end" + req.body.email);
 	  	try {
-	  		const { error } = validate(req.body);
-	  		if (error)
-	  			return res.status(400).send({ message: error.details[0].message });
+	  		// const { error } = validate(req.body);
+	  		// if (error)
+	  		// 	return res.status(400).send({ message: error.details[0].message });
 	  
 	  		const user = await User.findOne({ email: req.body.email });
 			console.log("USER->"+user);
@@ -28,8 +30,9 @@ export default async function addTest(req, res) {
 	  			return res.status(401).send({ message: "Invalid Email or Password" });
 	        try{
 				const token = await user.generateAuthToken();
+				// var token = jwt.sign({email:req.body.email},'supersecret',{expiresIn: 120})
 				console.log(token);
-				res.status(200).send({ data: token, message: "logged in successfully" });
+				res.status(200).send({ data: token, message: "logged in successfully", email: req.body.email ,user_id:user._id });
 			}
 	  		catch(error){
                res.send(error);
