@@ -21,12 +21,13 @@ import BotMessage from './BotMessage';
 import UserMessage from './UserMessage';
 import Messages from './Messages';
 import Input from './Input';
-import { useState,useEffect } from 'react';
+import { useState,useEffect,useRef } from 'react';
 import Header from './Header';
 import axios from 'axios';
 import Chip from '@material-ui/core/Chip';
 import {useRouter} from 'next/router';
-
+import ContentPasteGoIcon from '@mui/icons-material/Bolt';
+import InputBase from '@mui/material/InputBase';
 
 const useStyles = makeStyles({
   table: {
@@ -52,11 +53,40 @@ const Chat = () => {
   const classes = useStyles();
   const router = useRouter();
   const [messages, setMessages] = useState([]);
-
+  const [searchItems,setSearchItems]=useState([]);
+  const [inputBar,setInputBar] = useState([]);
   const [replyMessage, setReplyMessage] = useState(null)
   const [banglishwords, setBanglishWords] = useState(null)
   const [percentage, setPercentage]=useState(null)
   const arr=[]
+  
+
+  const [values, setValues] = React.useState({
+    fields:"",
+  });
+
+  const handleChange = (prop) => (event) => {
+    setValues({ ...values, [prop]: event.target.value });
+    getSearchTerm();
+  };
+
+  const searchKeyword = (searchTerm) => {
+    var arr = searchItems;
+    if (searchTerm !== "" && searchTerm.length>1) {
+      const newSearchList = arr.filter((searchItem) => {
+        return Object.values(searchItem)
+          .join(" ")
+          .toLowerCase()
+          .includes(searchTerm.toLowerCase());
+      });
+      setInputBar(newSearchList);
+    } else {
+      setInputBar(searchItems);
+    }
+  };
+  const getSearchTerm = () => {
+    searchKeyword(values.fields);
+  };
   function getData(text) {
     axios({
       method: "GET",
@@ -74,6 +104,20 @@ const Chat = () => {
         console.log(error.response.headers)
         }
     })}
+
+    async function getSearchList(){
+      const { pid } = router.query
+      let data = {
+        email:pid
+      }
+      axios.post("/api/getSearch",data).then((response)=>{
+        console.log(response.data.queries);
+        setSearchItems(response.data.queries);
+        setInputBar(response.data.queries);
+       }).catch((error)=>{
+        console.log(error);
+       })
+    }
 
     async function searchList(text) {
       const { pid } = router.query
@@ -106,6 +150,7 @@ const Chat = () => {
       ]);
     }
     loadWelcomeMessage();
+    getSearchList();
   }, []);
 
   const send = async text => {
@@ -126,46 +171,29 @@ const Chat = () => {
   return (
     <div>
       <div>
-        {/* <Grid container>
-            <Grid item xs={12} >
-                <Typography variant="h5" className="header-message">Chat</Typography>
-            </Grid>
-        </Grid> */}
-        <Grid container component={Paper} className={classes.chatSection}>
-            <Grid item xs={3} className={classes.borderRight500}>
-                {/* <List>
-                    <ListItem button key="RemySharp">
-                        <ListItemIcon>
-                        <Avatar alt="Remy Sharp" src="https://material-ui.com/static/images/avatar/1.jpg" />
-                        </ListItemIcon>
-                        <ListItemText primary="John Wick"></ListItemText>
-                    </ListItem>
-                </List> */}
+        <Grid container component={Paper} className={classes.chatSection} >
+            <Grid item xs={3} className={classes.borderRight500} >
                 <Divider />
                 <Grid item xs={12} style={{padding: '10px'}}>
-                    <TextField id="outlined-basic-email" label="Search from history" variant="outlined" fullWidth />
+                    {/* <TextField id="outlined-basic-email" label="Search from history" variant="outlined" fullWidth ref={inputBar} onChange={getSearchTerm}/> */}
+                    <InputBase type="text" placeholder='search' value={values.fields} onChange={handleChange('fields')}/>
                 </Grid>
                 <Divider />
                 <List>
-                    <ListItem button key="RemySharp">
-                        <ListItemIcon>
-                            <Avatar alt="Remy Sharp" src="https://material-ui.com/static/images/avatar/1.jpg" />
-                        </ListItemIcon>
-                        <ListItemText primary="Remy Sharp">Remy Sharp</ListItemText>
-                        <ListItemText secondary="online" align="right"></ListItemText>
-                    </ListItem>
-                    <ListItem button key="Alice">
-                        <ListItemIcon>
-                            <Avatar alt="Alice" src="https://material-ui.com/static/images/avatar/3.jpg" />
-                        </ListItemIcon>
-                        <ListItemText primary="Alice">Alice</ListItemText>
-                    </ListItem>
-                    <ListItem button key="CindyBaker">
-                        <ListItemIcon>
-                            <Avatar alt="Cindy Baker" src="https://material-ui.com/static/images/avatar/2.jpg" />
-                        </ListItemIcon>
-                        <ListItemText primary="Cindy Baker">Cindy Baker</ListItemText>
-                    </ListItem>
+                  {
+                    inputBar?(
+                    inputBar.map((item)=>(
+                    <Box sx={{marginBottom:'6px',marginLeft:'20px'}}>  
+                    <Grid container marginBottom={30} spacing={2} sx={{ alignItems: "center", mx:"auto", marginBottom:"30px"}}> 
+                    <Grid><ContentPasteGoIcon sx={{ color:'#607D8B'}}/></Grid>
+                    <Grid>  
+                    <Typography>{item.body}</Typography>
+                    </Grid>
+                    </Grid>
+                    </Box>
+                    ))):(<div></div>)
+                  }
+                   
                 </List>
             </Grid>
             <Grid item xs={9}>

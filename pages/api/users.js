@@ -1,5 +1,7 @@
 //const router = require("express").Router();
-const { User ,validate } = require("../../models/user");
+var mongoose = require('mongoose');
+const { User } = require("../../models/user");
+const { Search } = require("../../models/search")
 const bcrypt = require("bcrypt");
 import connectMongo from "../../utils/connectMongo";
 
@@ -25,6 +27,8 @@ export default async function handler(req, res) {
 
 		await new User({ ...req.body, password: hashPassword }).save();
 		res.status(201).send({ message: "User created successfully" });
+		await new Search({email: req.body.email}).save();
+		//res.status(201).send({ message: "Search User created successfully" });
 	} catch (error) {
 		res.status(500).send({ message: "Internal Server Error" });
 	}	
