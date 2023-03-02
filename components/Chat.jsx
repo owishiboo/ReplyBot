@@ -110,10 +110,10 @@ const Chat = () => {
     })
       .then((response) => {
         const res = response.data;
-        console.log({ res: response});
         console.log(response.data.words);
         setBanglishWords(res.words);
-        setPercentage(res.ratio);
+        setPercentage(res.ratio1);
+        console.log({rat2: res.ratio2})
       })
       .catch((error) => {
         if (error.response) {

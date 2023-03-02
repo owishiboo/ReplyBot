@@ -11,6 +11,7 @@ nltk.download('punkt')
 import json
 import pickle
 import warnings
+import regex
 warnings.filterwarnings("ignore")
 import string
 
@@ -135,6 +136,13 @@ def CheckWord(word,numbers):
     print(word)
     return 1   
 
+def CheckWordBang(word):
+    found = bool(regex.fullmatch(r'\P{L}*\p{Bengali}+(?:\P{L}+\p{Bengali}+)*\P{L}*', word)) 
+    if(found):
+        return 1
+    else:
+        return 0
+
 
 @api.route('/api/banglish/<text>',methods=['GET','POST','OPTIONS'])
 @cross_origin(origin='*',headers=['Content-Type','Authorization'])
@@ -142,14 +150,22 @@ def detect_banglish(text):
     input = text
     puncfix=input.translate(str.maketrans('', '', string.punctuation))
     txt=puncfix.lower()
-    count=0
+    bnen=0
+    bn=0
     x = txt.split()
     numbers=[]
     for i in range(len(x)):
     #print(x[i])
-        count = count + CheckWord(x[i],numbers)
-    ct=count/len(x)*100    
-    return {"words": json.dumps(numbers, ensure_ascii=False), "ratio":ct}
+        inc = CheckWordBang(x[i])
+        
+        if(inc==1):
+            bn = bn + inc
+        else:
+            bnen = bnen + CheckWord(x[i],numbers)
+            
+    ct1 = bnen/len(x)*100   
+    ct2 = bn/len(x)*100
+    return {"words": json.dumps(numbers, ensure_ascii=False), "ratio1":ct1, "ratio2":ct2}
 
 # Run the app
 if __name__ == '__main__':
