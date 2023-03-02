@@ -42,7 +42,7 @@ net = tflearn.fully_connected(net, 8)
 net = tflearn.fully_connected(net, len(train_y[0]), activation='softmax')
 net = tflearn.regression(net)
 model = tflearn.DNN(net, tensorboard_dir='tflearn_logs')
-print("Loading the Model......")
+# print("Loading the Model......")
 # load our saved model
 model.load('./model.tflearn')
 
@@ -72,17 +72,17 @@ def bow(sentence, words, show_details=False):
     return(np.array(bag))
 
 ERROR_THRESHOLD = 0.25
-print("ERROR_THRESHOLD = 0.25")
+# print("ERROR_THRESHOLD = 0.25")
 
 def classify(sentence):
     # Prediction or To Get the Posibility or Probability from the Model
     results = model.predict([bow(sentence, words)])[0]
-    print('Prediction or To Get the Posibility or Probability from the Model')
-    print(results)
+    # print('Prediction or To Get the Posibility or Probability from the Model')
+    # print(results)
     # Exclude those results which are Below Threshold
     results = [[i,r] for i,r in enumerate(results) if r>ERROR_THRESHOLD]
-    print('Results after exclusion')
-    print(results)
+    # print('Results after exclusion')
+    # print(results)
     # Sorting is Done because heigher Confidence Answer comes first.
     results.sort(key=lambda x: x[1], reverse=True)
     return_list = []
@@ -93,8 +93,8 @@ def classify(sentence):
 
 def response(sentence, userID='123', show_details=False):
     results = classify(sentence)
-    print('Results after classification')
-    print(results)
+    # print('Results after classification')
+    # print(results)
     # That Means if Classification is Done then Find the Matching Tag.
     if results:
         # Long Loop to get the Result.
@@ -103,7 +103,7 @@ def response(sentence, userID='123', show_details=False):
                 # Tag Finding
                 if i['tag'] == results[0][0]:
                     # Random Response from High Order Probabilities
-                    print("this is random"+random.choice(i['responses']))
+                    # print("this is random"+random.choice(i['responses']))
                     return str(i['responses'])
 
             results.pop(0)
@@ -113,9 +113,9 @@ def response(sentence, userID='123', show_details=False):
 @cross_origin(origin='*',headers=['Content-Type','Authorization'])
 def my_response(text):
     # text = request.args.get('message')
-    print(text)
+    # print(text)
     resp = response(text)
-    print(resp)
+    # print(resp)
     return {"response": resp}
 
 
@@ -131,6 +131,8 @@ def CheckWord(word,numbers):
   if not found:
     # print(word)
     numbers.append(word);
+    print("words")
+    print(word)
     return 1   
 
 
@@ -147,7 +149,7 @@ def detect_banglish(text):
     #print(x[i])
         count = count + CheckWord(x[i],numbers)
     ct=count/len(x)*100    
-    return {"words": json.dumps(numbers), "ratio":ct}
+    return {"words": json.dumps(numbers, ensure_ascii=False), "ratio":ct}
 
 # Run the app
 if __name__ == '__main__':
