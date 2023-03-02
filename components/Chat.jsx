@@ -59,7 +59,7 @@ const Chat = () => {
   const [banglishwords, setBanglishWords] = useState(null)
   const [percentage, setPercentage]=useState(null)
   const arr=[]
-  
+  const [id,setId]=useState(null,);
 
   const [values, setValues] = React.useState({
     fields:"",
@@ -105,19 +105,35 @@ const Chat = () => {
         }
     })}
     
-    async function getSearchList(){
-      const { pid } = router.query
-      const list = {
-        email:pid
+    useEffect(()=>{
+      async function getSearchList(){
+        const { pid } = router.query
+        const list = {
+          email:pid
+        }
+        await axios.post("/api/getSearch",list).then((response)=>{
+          console.log(response.data.queries);
+          setSearchItems(response.data.queries);
+          setInputBar(response.data.queries);
+         }).catch((error)=>{
+          console.log(error);
+         })
       }
-      await axios.post("/api/getSearch",list).then((response)=>{
-        console.log(response.data.queries);
-        setSearchItems(response.data.queries);
-        setInputBar(response.data.queries);
-       }).catch((error)=>{
-        console.log(error);
-       })
-    }
+      getSearchList();
+    },[id,router])
+    // async function getSearchList(){
+    //   const { pid } = router.query
+    //   const list = {
+    //     email:pid
+    //   }
+    //   await axios.post("/api/getSearch",list).then((response)=>{
+    //     console.log(response.data.queries);
+    //     setSearchItems(response.data.queries);
+    //     setInputBar(response.data.queries);
+    //    }).catch((error)=>{
+    //     console.log(error);
+    //    })
+    // }
 
     async function searchList(text) {
       const { pid } = router.query
@@ -150,7 +166,8 @@ const Chat = () => {
       ]);
     }
     loadWelcomeMessage();
-    getSearchList();
+    setId(router.query);
+    //getSearchList();
   }, []);
 
   const send = async text => {
