@@ -1,42 +1,1988 @@
-{"intents": [
-        {"tag": "greeting",
-         "patterns": ["Hi", "How are you", "Is anyone there?", "Hello", "Good day"],
-         "responses": ["Hello, thanks for visiting", "Good to see you again", "Hi there, how can I help?"],
-         "context_set": ""
-        },
-        {"tag": "goodbye",
-         "patterns": ["Bye", "See you later", "Goodbye"],
-         "responses": ["See you later, thanks for visiting", "Have a nice day", "Bye! Come back again soon."]
-        },
-        {"tag": "thanks",
-         "patterns": ["Thanks", "Thank you", "That's helpful"],
-         "responses": ["Happy to help!", "Any time!", "My pleasure"]
-        },
-        {"tag": "hours",
-         "patterns": ["What hours are you open?", "What are your hours?", "When are you open?" ],
-         "responses": ["We're open every day 9am-9pm", "Our hours are 9am-9pm every day"]
-        },
-        {"tag": "mopeds",
-         "patterns": ["Which mopeds do you have?", "What kinds of mopeds are there?", "What do you rent?" ],
-         "responses": ["We rent Yamaha, Piaggio and Vespa mopeds", "We have Piaggio, Vespa and Yamaha mopeds"]
-        },
-        {"tag": "payments",
-         "patterns": ["Do you take credit cards?", "Do you accept Mastercard?", "Are you cash only?" ],
-         "responses": ["We accept VISA, Mastercard and AMEX", "We accept most major credit cards"]
-        },
-        {"tag": "opentoday",
-         "patterns": ["Are you open today?", "When do you open today?", "What are your hours today?"],
-         "responses": ["We're open every day from 9am-9pm", "Our hours are 9am-9pm every day"]
-        },
-        {"tag": "rental",
-         "patterns": ["Can we rent a moped?", "I'd like to rent a moped", "How does this work?" ],
-         "responses": ["Are you looking to rent today or later this week?"],
-         "context_set": "rentalday"
-        },
-        {"tag": "today",
-         "patterns": ["today"],
-         "responses": ["For rentals today please call 1-800-MYMOPED", "Same-day rentals please call 1-800-MYMOPED"],
-         "context_filter": "rentalday"
-        }
-   ]
-}
+{"intents" :[
+    {
+        "tag": "query0",
+        "pattern": [
+            "Skitto the best sim",
+            "স্কিটো সেরা সিম"
+        ],
+        "responses": " ধন্যবাদ।",
+        "context_set": ""
+    },
+    {
+        "tag": "query1",
+        "pattern": [
+            "Sim kotodin bondho thakle recycle hoye jayy",
+            "সিম কোনদিন বন্ধ থাকলে রিসাইকেল হয়ে যায়?"
+        ],
+        "responses": "১ মাস।",
+        "context_set": ""
+    },
+    {
+        "tag": "query2",
+        "pattern": [
+            "Sim 4g te convert korar jonno customer care a ki ki niye jete hobe??",
+            "সিম ৪জি তে কনভার্ট করার জন্য কাস্টমার কেয়ার এ কি কি নিয়ে যেতে হবে?",
+            "Sim 6 mounth er besi use kora hoinai ...sim tola jabe oi num ta skitto sim er",
+            "সিম ৬ মাসের বেশি ব্যবহার করা হয়নি।সিম তোলা যাবে অই নাম্বার ছিল স্কিটো সিম এর"
+        ],
+        "responses": "১২১ এ কল করুন।",
+        "context_set": ""
+    },
+    {
+        "tag": "query3",
+        "pattern": [
+            "Silver star ra ki free replesment ar aotay pore janaben",
+            "সিল্ভার স্টার রা কি ফ্রি রিপ্লেস্মেন্ট এর আওতায় পরে জানাবেন",
+            "Silver Star হলে কি সিম রিপ্লেস ফ্রি??",
+            "্সিল্ভার স্টার হলে কি সিম রিপ্লেস ফ্রি",
+            "Sim MNP KORE KIVABE",
+            "সিম এমএন পি করে কিভাবে",
+            "Sim কিনব কিন্তু 230 টাকা চাচ্ছে তাহলে কিনবো কি করে",
+            "্সিম কিনব কিন্তু ২৩০ টাকা চাচ্ছে তাহলে কিনবো কিভাবে"
+        ],
+        "responses": "১২১ এ কল দিন।",
+        "context_set": ""
+    },
+    {
+        "tag": "query4",
+        "pattern": [
+            "siktto সিম এর কাস্টমার কেয়ার হেলপ সেন্টার নাম্বার কত",
+            "স্কিটো সিম এর কাস্টমার কেয়ার হেলপ সেন্টার নাম্বার কত",
+            "Sir Grameenphone ar help line number ti ki.",
+            "স্যার গ্রামীণফোন এর হেল্পলাইন নাম্বার টা কি",
+            "skito mb দেখব কত ডায়াল করে",
+            "স্কিটো এম্বি দেখবো কত ডায়াল করে"
+        ],
+        "responses": "১২১।",
+        "context_set": ""
+    },
+    {
+        "tag": "query5",
+        "pattern": [
+            "sim er price koto",
+            "",
+            "Skitti Sim kotw",
+            "স্কিটো সিম কত্ব",
+            "skitto sim kinte koto tk lagbe?",
+            "স্কিটো সিম কিনতে কত টাকা লাগে",
+            "Skitto SIM koto taka",
+            "স্কিটো সিম কত টাকা",
+            "Skitto sim koto takta",
+            "স্কিটো সিম কত টাকা",
+            "sim price koto akhon",
+            "সিম প্রাইস কত এখন",
+            "Skitto Sim price kto?",
+            "স্কিটো সিম এর দাম কত?",
+            "Sikkito sim e dam koto?",
+            "স্কিটো সিম এর দাম কত?",
+            "Sim ar price koto",
+            "সিম এর প্রাইস কত",
+            "sim ar prize ta koto???",
+            "সিম এর প্রাইজ টা কত",
+            "SIM card price koto",
+            "সিম কার্ড এর দাম কত",
+            "Sim er dam koto",
+            "সিম এর দাম কত",
+            "Sim er dam koto skitto",
+            "সিম এর দাম কত স্কিটো",
+            "Sim er price koto?",
+            "সিম এর প্রাইস কত",
+            "sim er prize koto??",
+            "সিম এর প্রাইস কত",
+            "Sim kotho kore??",
+            "সিম কত করে",
+            "sim koto lage dam?",
+            "সিম কত লাগে দাম",
+            "SIM KOTO??",
+            "সিম কত",
+            "Sim notun kore tulte koto tk lage??kindly janaben",
+            "সিম নতুন করে তুলতে কত টাকা লাগে? দয়া করে জানাবেন",
+            "Sim price",
+            "সিম এর দাম?",
+            "Sim price kato",
+            "সিম প্রাইস কত",
+            "SIM price koto",
+            "সিম এর দাম কত?",
+            "SIM price koto.....????",
+            "সিম প্রাইস কত ",
+            "Sim price?",
+            "্সিম প্রাইস?",
+            "SIM prices koto",
+            "সিম প্রাইসেস কত?",
+            "Sim Prices Koto New ?",
+            "নতুন সিম প্রাইস কত",
+            "Sim replace korte koto tk lagbe...",
+            "সিম রিপ্লেস করতে কত টাকা লাগে?",
+            "simer dam koto akhon",
+            "সিমের দাম কত এখন",
+            "simer dam koto??",
+            "সিমের দাম কত",
+            "simer price koto akhon",
+            "সিমের দাম কত এখন",
+            "skiitto sim rr pric koto",
+            "স্কিটো সিম এর দাম কত",
+            "Skito sim er price koto???",
+            "স্কিটো সিম এর দাম কত",
+            "Skito sim koto kore?",
+            "স্কিটো সিম কত করে",
+            "Skito sim price koto?",
+            "স্কিটো সিম এর দাম কত",
+            "Skito sim কেমন নেট অফার দিয়ে থাকে ..?? কিনতে চাচ্ছি দাম কেমন..??",
+            "স্কিটো সিম কেমন নেট অফার দিয়ে থাকে? কিনতে চাচ্ছি দাম কেমন?",
+            "Skito sim দাম কত....?",
+            "স্কিটো সিম এর দাম কত",
+            "Skitto sim koto dam??",
+            "স্কিটো সিম কত দাম?",
+            "Skitto sim koto kore",
+            "স্কিটো সিম কত করে",
+            "Skitto sim pric koto",
+            "স্কিটো সিম এর দাম কত",
+            "Skitto sim price koto??",
+            "স্কিটো সিম এর দাম কত?",
+            "Skitto sim price koto????",
+            "স্কিটো সিম এর দাম কত?",
+            "Skitto sim price koto????????????",
+            "স্কিটো সিম এর দাম কত?",
+            "Skitto sim price?",
+            "স্কিটো সিম এর দাম?",
+            "Skitto sim এর দাম কত ?",
+            "স্কিটো সিম এর দাম কত?",
+            "Skitto sim এর দাম কত এখন",
+            "স্কিটো সিম এর দাম কত এখন?",
+            "Skitto sim এর দাম কত বতর্মান",
+            "স্কিটো সিম এর দাম কত বর্তমানে?",
+            "Skitto SIM এর দাম কতো?",
+            "স্কিটো সিম এর দাম কত?",
+            "Skitto SIM এর বর্তমান মূল্য কত ?",
+            "স্কিটো সিম এর বর্তমান মূল্য কত?",
+            "skitto sim'er price koto?",
+            "স্কিটো সিম এর দাম কত",
+            "Skitto simer dam koto....?",
+            "স্কিটো সিমের দাম কত?"
+        ],
+        "responses": "২০০ টাকা।",
+        "context_set": ""
+    },
+    {
+        "tag": "query6",
+        "pattern": [
+            "Skitto cod deya Sim nite gele koi taka lagbe",
+            "স্কিটো সিওডি দিয়ে সিম নিতে চাইলে কত টাকা লাগবে"
+        ],
+        "responses": "২০০+ ডেলিভারী চার্জ।",
+        "context_set": ""
+    },
+    {
+        "tag": "query7",
+        "pattern": [
+            "Sim 3G thake 4G korte koto khoros hoi?",
+            "সিম ৩জি থেকে ৪জি করতে কত খরচ হয়?",
+            "sim 3g theke 4g korte charge koto?",
+            "সিম ৩জি থেকে ৪জি করতে চার্জ কত",
+            "Sim 4G Korte koto tk lagbe??",
+            "সিম ৪জি করতে কত টাকা লাগবে",
+            "sim 4g replaced charge koto?",
+            "সিম ৪জি রিপ্লেইস চার্জ কত?"
+        ],
+        "responses": "৩০০ টাকা ।",
+        "context_set": ""
+    },
+    {
+        "tag": "query8",
+        "pattern": [
+            "sim 4g korte koto taka lagbe. free reples kora jabe ki",
+            "্সিম ৪জি করতে কত টাকা লাগবে্‌ ফ্রি রিপ্লেস করা যাবে কি?"
+        ],
+        "responses": "৩০০ টাকা ।, না।",
+        "context_set": ""
+    },
+    {
+        "tag": "query9",
+        "pattern": [
+            "Sim kotodin of kre rakhle bondho hoye jabe",
+            "সিম কতদিন অফ করে রাখলএ বন্ধ হয়ে যাবে",
+            "SIM কতদিন অব্যবহিত থাকলে, তা আর উঠানো যায় না।",
+            "সিম কতদিন অব্যবহৃত থাকলে আর উঠানো যায় না?"
+        ],
+        "responses": "৪৫০ দিন।",
+        "context_set": ""
+    },
+    {
+        "tag": "query10",
+        "pattern": [
+            "skitto sim er dam 500 taka kano??",
+            "স্কিটো সিম এর দাম ৫০০ টাকা কেন?"
+        ],
+        "responses": "৫০০ না। আরো কম ।ভিজিট https://www.skitto.com/",
+        "context_set": ""
+    },
+    {
+        "tag": "query11",
+        "pattern": [
+            "Sim 5g korbo kivave ?2 phone 4ta gp sim",
+            "সিম ৫জি করবো কিভাবে? ২ ফোন ৪ টা জিপি সিম"
+        ],
+        "responses": "৫জি আসেনি এখনো।",
+        "context_set": ""
+    },
+    {
+        "tag": "query12",
+        "pattern": [
+            "Sir,,,,,,,,,sms ar offer gula aktu bolyn..? Any number a",
+            "স্যার, এসএমএস এর অফার গুলা একটু বলুন। যেকোন নাম্বার এ"
+        ],
+        "responses": "https://www.allsimofferbd.com/2019/08/gp-sms-pack.html",
+        "context_set": ""
+    },
+    {
+        "tag": "query13",
+        "pattern": [
+            "Show room kothi",
+            "শোরুম কোথায়",
+            "Showroom Kothai",
+            "শোরুম কোথায়"
+        ],
+        "responses": "https://www.google.com/search?q=gp+showrooms&oq=gp+showrooms&aqs=chrome..69i57j33i160l2.2275j0j4&sourceid=chrome&ie=UTF-8",
+        "context_set": ""
+    },
+    {
+        "tag": "query14",
+        "pattern": [
+            "savar customer care address Pleas",
+            "সাভার কাস্টমার কেয়ার এড্রেস প্লিজ",
+            "Savar Hemayetpur theke sim replace korar centre ahse",
+            "সাভার হেমায়েতপুর থেকে সিম রিপ্লেস করার সেন্টার আছে?",
+            "Savar theke sim kinar kono way ache?",
+            "সাভার থেকে সিম কেনার কোন উপায় আছে?",
+            "Savar theke sim order korbo kivabe??",
+            "সাভার থেকে সিম অর্ডার করবো কিভাবে",
+            "Saver a kothi.. Powa ji",
+            "সাভার এ কোথায় পাওয়া যায়"
+        ],
+        "responses": "https://www.grameenphone.com/personal/customer-service",
+        "context_set": ""
+    },
+    {
+        "tag": "query15",
+        "pattern": [
+            "Secret deal 10GB 89 tk Ei ta koto diner moddhe nite hobe?",
+            "সিক্রেট ডিল ১০ জিবি ৮৯ টাকা এইটা কত দিনের মধ্যে নিতে হবে?",
+            "Secret deal a 7gb 99 taka ta j mb ta dawa hocche ota ki 4g mb na 3g?",
+            "সিক্রেট ডীল এ ৭ জিবি ৯৯ টাকা টা যে এমবি দেয়া হচ্ছে ওটা কি ৪জি এমবি না ৩জি?",
+            "Secret deal e 45 poisa r offer koi",
+            "সিক্রেট ডীল এ ৪৫ পয়সা অফার কই",
+            "Secret deal koi????",
+            "সিক্রেট ডীল কই",
+            "secret deal offer টা চাই।",
+            "সিক্রেট ডীল অফার টা চাই",
+            "Secret deal section ta paitesina.keu bolen plz",
+            "সিক্রেট ডীল সেকশন টা পাচ্ছিনা কেউ বলবেন দয়া করে?",
+            "secret deal ta ar dibe na nki??",
+            "সিক্রেট ডিল টা আর দিবে না নাকি",
+            "Secret deal আসার পর না নিলে তা কতক্ষণ পর্যন্ত থাকে??",
+            "সিক্রেট ডীল আসার পর না নিলে তা কতক্ষণ পর্যন্ত থাকে?",
+            "Secret deal এ একটা অফার শো করছে ৮GB 200mnt কিন্তু সেটা নেয়া যাচ্ছে না কেনো? ঐখানে কি মিথ্যা লিখে?",
+            "সিক্রেট ডিল এ একটা অফার শো করছে ৮জিবি ২০০ মিনিট কিন্তু সেটা নেয়া যাচ্ছে না কেনো? ঐখানে কি মিথ্যা লিখে?",
+            "secret deals er data pack ki 24 hours use kora jabe?",
+            "সিক্রেট ডিল এর ডাটা প্যাক কি ২৪ ঘন্টা ব্যবহার করা যাবে?",
+            "secret deals kivabe nite hoy kw janle amk ektu bolba....",
+            "সিক্রেট ডিল কিভাবে নিতে হয় কেউ জানলে আমাকে একটু বলবে",
+            "Secret deals off keno??",
+            "সিক্রেট ডীল অফ কেন",
+            "Secret Deals কবে আসবে",
+            "সিক্রেট ডীলস কবে আসবে",
+            "Secret deals টা কতো দিন পর পর পাওয়া যায়??",
+            "সিক্রেট ডিলস টা কতদিন পর পর পাওয়া যায়?",
+            "secret deel offer ki shudu fb lite & imo te projjo ...???",
+            "সিক্রেট ডিল অফার কি শুধু এফবি লাইট ও ইমো তে প্রজোয্য?",
+            "Secret,super,lukano eighula te offers ase na kno",
+            "সিক্রেট, সুপার, লুকানো এগুলাতে অফার আসে না কেন"
+        ],
+        "responses": "https://www.grameenphone.com/personal/plans-offers/offers",
+        "context_set": ""
+    },
+    {
+        "tag": "query16",
+        "pattern": [
+            "skitto bondho sim ar ki offer",
+            "স্কিটো বন্ধ সিম এর কি অফার",
+            "Skitto bondho SIM ar offer ki",
+            "স্কিটো বন্ধ সিম এর অফার কি",
+            "Skitto bondho sim er offer ki",
+            "স্কিটো বন্ধ সিম এর অফার কি",
+            "skitto bondho simer kno ki offer ase",
+            "স্কিটো বন্ধ সিমের কি কোন অফার আছে?",
+            "Skitto bondho simer kno offer ase",
+            "স্কিটো বন্ধ সিমের কোন অফার আছে?",
+            "skitto bondho simer kono offer ache naki?",
+            "স্কিটো বন্ধ সিমের কোন অফার আছে নাকি",
+            "Skitto bondho simer offer ki?",
+            "স্কিটো বন্ধ সিমের অফার কি",
+            "skitto bondo sim ar kono offer ase ki?",
+            "স্কিটো বন্ধ সিম এর কোন অফার আছে কি?",
+            "skitto bondo sim er offer kono ase?",
+            "স্কিটো বন্ধ সিমের কোন অফার আছে?"
+        ],
+        "responses": "https://www.skitto.com/",
+        "context_set": ""
+    },
+    {
+        "tag": "query17",
+        "pattern": [
+            "Skitto Bondho Sim A Kono Offer Ace Kina Plz Aktu Janaben",
+            "স্কিটো বন্ধ সিম এ কোন অফার আছে কিনা প্লিজ একটূ জানাবেন"
+        ],
+        "responses": "https://www.skitto.com/ এখানে ভিজিট করুন।",
+        "context_set": ""
+    },
+    {
+        "tag": "query18",
+        "pattern": [
+            "Scotti sim er subida ki",
+            "স্কিটো সিম এর সুবিধা কি"
+        ],
+        "responses": "https://www.skitto.com/faq/282-what-is-skitto#:~:text=skitto%20is%20a%20digital%20product,one%20interacts%20with%20a%20telco.",
+        "context_set": ""
+    },
+    {
+        "tag": "query19",
+        "pattern": [
+            "Satkhira Te Kothai Paoia Jai",
+            "সাতক্ষীরা তে কোথায় পাওয়া যায়",
+            "Satkhirate skitto sim kivabe pabo",
+            "সাতক্ষীরা স্কিটো সিম কিভাবে পাবো",
+            "Savar a Ai sim ya Kothai pabo ??",
+            "সাভার এ এই সিম টা কোথায় পাবো"
+        ],
+        "responses": "https://www.skitto.com/gpc-locations",
+        "context_set": ""
+    },
+    {
+        "tag": "query20",
+        "pattern": [
+            "Skitto sim ar center ki grameen center sakane gele ki sim tular bisoita jana jabe???",
+            "স্কিটো সিম এর কেন্দ্র কি গ্রামীন কেন্দ্র ? সেখানে গেলে কি সিম তোলার বিষয়টা জানা যাবে?"
+        ],
+        "responses": "অনলাইন এই জানতে পারবেন।ভিজিট https://www.skitto.com/",
+        "context_set": ""
+    },
+    {
+        "tag": "query21",
+        "pattern": [
+            "Skitto app chara skitto net kenar upai ki?",
+            "স্কিটো অ্যাপ ছাড়া স্কিটো নেট কেনার উপায় কি"
+        ],
+        "responses": "অনলাইনে কিনতে পারবেন।",
+        "context_set": ""
+    },
+    {
+        "tag": "query22",
+        "pattern": [
+            "Sim kenar por bola hoyesilo 3 mnth a 3 gb pabo tooo koi last mnth a paisi 1 gb ei mnth a ki ekai dibe naki rchrg krte hoba??",
+            "সিম কেনার পর বলা হয়েছিল ৩ মাস এ ৩ জিবি পাবো তো কই শেষ মাসে পেয়েছি ১ জিবি এই মাসে কি একাই দিবে নাকি রিচার্জ করতে হবে"
+        ],
+        "responses": "অনুগ্রহপুর্বক আরেকটু অপেক্ষা করুণ।",
+        "context_set": ""
+    },
+    {
+        "tag": "query23",
+        "pattern": [
+            "Skitto sim e balnce ase but skitto diye mb kinte gele card and others astese oitai gele onno option passina.ki korbo kivabe net kinbo.onno way ba option to oklahne dekhtisi na",
+            "স্কিটো সিম এ ব্যালেন্স আছে কিন্তু স্কিটো দিয়ে এমবি কিনতে গেলে কার্ড এবং অন্যান্য আসছে। ঐটায় গেলে অন্য অপশন পাচ্ছিনা। কি করবো কিভাবে নেট কিনব। অন্য উপায় বা অপশন তো ওখানে দেয়া নেই"
+        ],
+        "responses": "অপেক্ষা করুন ঠিক হয়ে যাবে।",
+        "context_set": ""
+    },
+    {
+        "tag": "query24",
+        "pattern": [
+            "Sar , কম দামে ভালো ভালো অফার দেখান না প্লিজ",
+            "স্যার, কম দামে ভালো অফার দেখান না প্লিজ",
+            "Secrets deal কিভাবে নেয়?অপশনে ট্যাপ করলে কিছু আসেনা।",
+            "সিক্রেট ডিল কিভাবে নেয়? অপশনে ট্যাপ করলে কিছু আসে না"
+        ],
+        "responses": "অফার এর জন্য ভিজিট করুন- https://www.grameenphone.com/personal/plans-offers/offers",
+        "context_set": ""
+    },
+    {
+        "tag": "query25",
+        "pattern": [
+            "Sir..... অফার এর sms দেখে রিচার্জ করার পরে অফার start হয় না কেন?",
+            "স্যার, অফার এর এসএমএস দেখে রিচার্জ করার পর অফার স্টার্ট হয় না কেন"
+        ],
+        "responses": "অফার টি কিনতে হবে।",
+        "context_set": ""
+    },
+    {
+        "tag": "query26",
+        "pattern": [
+            "Sir, is this offer available for skitto as well?",
+            " স্যার, এই অফারটি কি স্কিটোর জন্যও পাওয়া যায়?"
+        ],
+        "responses": "অফারটি উল্লেখ করুন।",
+        "context_set": ""
+    },
+    {
+        "tag": "query27",
+        "pattern": [
+            "Sim replacement kora jaba na",
+            "সিম রিপ্লেসমেন্ট করা যাবে না"
+        ],
+        "responses": "অবশ্যই যাবে।",
+        "context_set": ""
+    },
+    {
+        "tag": "query28",
+        "pattern": [
+            "Skitto sim a 5 days dhore problem hocce ai problem ar ki kono solution hobe na?",
+            "স্কিটো সিম এ ৫ দিন ধরে সমস্যা হচ্ছে এই সমস্যার কি কোনো সমাধান হবে না?"
+        ],
+        "responses": "অবশ্যই হবে।",
+        "context_set": ""
+    },
+    {
+        "tag": "query29",
+        "pattern": [
+            "Skitto sim এর মধ্যে একটা হলো রিচার্জ বিকাশ /রকেটে এর সাহায্যে করা হয় যেনো।",
+            "স্কিটো সিম এর মধ্যে একটা হলো রিচার্জ বিকাশ /রকেটে এর সাহায্যে করা হয় যেনো।"
+        ],
+        "responses": "অবশ্যই।",
+        "context_set": ""
+    },
+    {
+        "tag": "query30",
+        "pattern": [
+            "Skitto balance check code koto?",
+            "স্কিটো ব্যালেন্স চেক কোড কত?",
+            "skitto balance check er code pls",
+            "স্কিটো ব্যালেন্স চেক কোড প্লিজ"
+        ],
+        "responses": "অ্যাপ এ চেক করুন।",
+        "context_set": ""
+    },
+    {
+        "tag": "query31",
+        "pattern": [
+            "skitto sim er balance & Internet balance janbo ki kore, ans please.",
+            "স্কিটো সিম এর ব্যালেন্স & ইন্টারনেট ব্যালেন্স জানবো কি করে, উত্তর দিন দয়া করে"
+        ],
+        "responses": "অ্যাপ এ দেখতে পারবেন।",
+        "context_set": ""
+    },
+    {
+        "tag": "query32",
+        "pattern": [
+            "Skitto ki apps chada cole usd code dail kore, tk- internet- sms cheak kora jay, o kina jay please ans?",
+            "স্কিটো কি অ্যাপ ছাড়া চলে ইউএসডী কোড ডায়াল করে টাকা ইন্টারনেট এসএমএস চেক করা যায়, ও কেনা যায়?"
+        ],
+        "responses": "অ্যাপ এর মাধ্যমে চলে।",
+        "context_set": ""
+    },
+    {
+        "tag": "query33",
+        "pattern": [
+            "Skitto app ta delete hoye geche. Akhn ki vabe MB check korbo?? Plz help",
+            "স্কিটো অ্যাপ টা ডিলিট হয়ে গেছে। এখন কিভাবে এমবি চেক করবো? প্লিজ সাহায্য করুন"
+        ],
+        "responses": "অ্যাপ টা আবার ইন্সটল দিন।",
+        "context_set": ""
+    },
+    {
+        "tag": "query34",
+        "pattern": [
+            "Sim price koto?",
+            "সিম প্রাইস কত",
+            "Simer dam koto?",
+            "সিমের দাম কত",
+            "Simer Prize koto??",
+            "সিমের দাম কত?"
+        ],
+        "responses": "২০০ টাকা ।",
+        "context_set": ""
+    },
+    {
+        "tag": "query35",
+        "pattern": [
+            "Skitto sim kothay paoa jabe r dam koto ? Janaben plzzz",
+            "স্কিটো সিম কোথায় পাওয়া যাবে আর দাম কত? জানাবেন দয়া করে"
+        ],
+        "responses": "২০০ টাকা। ভিজিট https://www.skitto.com/",
+        "context_set": ""
+    },
+    {
+        "tag": "query36",
+        "pattern": [
+            "Skitto sim koy taka? Nearest customer Care a pauya jabe kina?",
+            "স্কিটো সিম কয় টাকা? কাছের কাস্টমার কেয়ার এ পাওয়া যাবে কি না?"
+        ],
+        "responses": "২০০ টাকা। হ্যাঁযাবে।",
+        "context_set": ""
+    },
+    {
+        "tag": "query37",
+        "pattern": [
+            "sim koto taka?koi theke nibo.?sim nite ki ki lagbe?",
+            "সিম কত টাকা কই থেকে নিব? সিম নিতে কি কি লাগবে?"
+        ],
+        "responses": "২০০ টাকা।আপনার নিকটস্থ কাস্টমার কেয়ারে যোগাযোগ করুন।",
+        "context_set": ""
+    },
+    {
+        "tag": "query38",
+        "pattern": [
+            "skitto sim price Koto ??",
+            "স্কিটো সিমের দাম কত?"
+        ],
+        "responses": "২০০ টাকার।",
+        "context_set": ""
+    },
+    {
+        "tag": "query39",
+        "pattern": [
+            "Skitto sim e kina minit dhekbo kivabe?",
+            "স্কিটো সিম কিনে মিনিট দেখবো কিভাবে?"
+        ],
+        "responses": "অ্যাপ থেকে।",
+        "context_set": ""
+    },
+    {
+        "tag": "query40",
+        "pattern": [
+            "Skitto 1 gb er price koto tk?",
+            "স্কিটো ১ জিবি এর দাম কত টাকা"
+        ],
+        "responses": "অ্যাপ দেখুন।",
+        "context_set": ""
+    },
+    {
+        "tag": "query41",
+        "pattern": [
+            "Skiito new user..New kinsi sim .Kivhabe minute kinbo ..Ki korbo kichu bhujtesina",
+            "স্কিটো নতুন গ্রাহক।নতুন কিনেছি সিম। কিভাবে মিনিট কিনবো কি করব কিছু বুঝতে পারছি না",
+            "Skito new sim e ki ki offer ase?",
+            "স্কিটো নতুন সিম এ কি কি অফার আছে",
+            "skito সিম এ কেমনে মিনিট কেনে",
+            "স্কিটো সিম এ কেম্নে মিনিট কেনে",
+            "Skitti Bhondho simer ki offer ase...???",
+            "স্কিটো বন্ধ সিমের কি অফার আছে?",
+            "skitti new sim offer ki...??",
+            "স্কিটো নতুন সিম অফার কি?",
+            "Skitto 10 gb 94 tk oi offer ta paini,akhn ki pawa jabe??",
+            "স্কিটো ১০ জিবি ৯৪ টাকার ঐ অফার টা পাইনি। এখন কি পাওয়া যাবে?",
+            "Skitto ৪ জি সিম এর দাম কত আর নতুন সিম এ কি কি অফার আছে আর কোথায় পাব সিম টা ঠাকুরগাঁও জেলা পীরগ্ন্জ থানাতে।",
+            "স্কিটো ৪ জি সিম এর দাম কত আর নতুন সিম এ কি কি অফার আছে আর কোথায় পাব সিম টা ঠাকুরগাঁও জেলা পীরগ্ন্জ থানাতে।",
+            "Skitto ৯৯টাকা দিয়ে সিমের অফার আছে...?",
+            "স্কিটো ৯৯ টাকা দিয়ে সিমের অফার আছে...?",
+            "SKITTO ALL OFFER LIST DAKTA CAI",
+            "স্কিটো সব অফার লিস্ট দেখতে চাই",
+            "Skitto App a kivabe sms kine",
+            "স্কিটো অ্যাপ এ কিভাবে এসএমএস কেনে",
+            "Skitto app diye minute kinbo kivabe",
+            "স্কিটো অ্যাপ দিয়ে মিনিট কিনবো কিভাবে",
+            "skitto app theke kemne minit kena jay .plz kew ekto bolen",
+            "স্কিটো অ্যাপ থেকে কিভাবে মিনিট কেনা যায়। দয়া করে একটু বলবেন",
+            "skitto apps e mb dekbo kivabe",
+            "স্কিটো অ্যাপ এ এমবি দেখবো কিভাবে",
+            "Skitto apps theke call history chek korbo kivabe...??",
+            "স্কিটো অ্যাপ থেকে কল হিস্টোরি চেক করবো কিভাবে",
+            "Skitto এর সর্বনিম্ন কলরেট ২৪ ঘন্টা সকল নাম্বারে ভ্যাটসহ কত এবং কিভাবে করব ?",
+            "স্কিটো এর সর্বনিম্ন কলরেট ২৪ ঘন্টা সকল নাম্বারে ভ্যাটসহ কত এবং কিভাবে করব ?"
+        ],
+        "responses": "অ্যাপ ভিজিট করুন।",
+        "context_set": ""
+    },
+    {
+        "tag": "query42",
+        "pattern": [
+            "skitto sim app sara use kora jabe na ? jekono pack kenar kono codes nai?",
+            "স্কিটো সিম অ্যাপ ছাড়া ব্যবহার করা যাবে না? জেকোনো প্যাক কেনার কোন কোড নাই?"
+        ],
+        "responses": "আছে, ভিজিট https://www.skitto.com/",
+        "context_set": ""
+    },
+    {
+        "tag": "query43",
+        "pattern": [
+            "Skitto SIM e SureCash account chalu hoy na keno?",
+            "স্কিটো সিম এ শিউর ক্যাশ একাউন্ট চালু হয় না কেন?"
+        ],
+        "responses": "আপনার তথ্যের জন্য ধন্যবাদ। আমরা বিষয়টি দেখছি।",
+        "context_set": ""
+    },
+    {
+        "tag": "query44",
+        "pattern": [
+            "Sim a tk ace kono offer active hoy na kn???",
+            "সিম এ টাকা আছে কোন অফার এক্টিভ হয় না কেন",
+            "sim ace but running krte parci nh",
+            "সিম আছে তবে চালাতে পারছি না",
+            "Sim akta kinlam versity thkea ! Akhn sim on korlei bole Sim off",
+            "সিম একটা কিনলাম ভার্সিটী থেকে। এখন সিম অন করলেই বলে সিম অফ",
+            "sim amni amni off hoye gese kn..???..",
+            "সিম এমনি এমনি অফ হয়ে গেছে কেন",
+            "Sim Barguna home delivery deoa jabe??",
+            "সিম বরগুনা হোম ডেলিভারি দেয়া যাবে?"
+        ],
+        "responses": "আপনার নিকটস্থ কাস্টমার কেয়ারে যান।",
+        "context_set": ""
+    },
+    {
+        "tag": "query45",
+        "pattern": [
+            "Sir Skitto sim replies price koto?",
+            "স্যার স্কিটো সিম রিপ্লেস প্রাইস কত"
+        ],
+        "responses": "আপনার নিকটস্থ কাস্টমার কেয়ারে যোগাযোগ করুন ।",
+        "context_set": ""
+    },
+    {
+        "tag": "query46",
+        "pattern": [
+            "Sim a kono balance puraite partesina..kothaw call dite partesina..but internet chalano jay..Any one plz help me....??",
+            "সিম এ কোন ব্যালেন্স ফুরাতে পারছি না, কোথাও কল দিতে পারছিনা।তবে নেট চালানো যায়। কেউ সাহায্য করুন?",
+            "SIM bikroy kora kobe theke suru hobe .kothai pabo kivabe pabo .",
+            "সিম বিক্রয় করা কবে থেকে শুরু হবে কোথায় পাবো কিভাবে পাব",
+            "Sim card name turned into 47001 since last 4-5 days.",
+            "গত 4-5 দিন থেকে সিম কার্ডের নাম 47001 হয়ে গেছে।",
+            "SIM card NID theke deactivate korte chaile ki korte hbe?",
+            "সিম কার্ড এন আইডী থেকে ডিএকটিভেট করতে চাইলে কি করতে হবে?",
+            "SIM card replys ar charj koto taka",
+            "সিম কার্ড পরিবর্তন চার্জ কত টাকা ",
+            "Sim Couldn't find dekhay keno?",
+            "সিম কুডন্ট ফাইন্ড দেখায় কেন",
+            "sim da koi pamo",
+            "সিম ডা কই পাবো",
+            "Sim deactivated korte ki ki documents lage??",
+            "সিম ডিএকটীভেট করতে কি কি ডকুমেন্টস লাগে?",
+            "Sim Deactive korbo... Sey Bisoy Kisu jante sasci.....",
+            "সিম ডিএকটিভেট করব। সেই বিষয়ে কিছু জানতে আসছি",
+            "Sim e paowya jai na abar apps diya ki kormu.....2, 1 ta paowya geleo dam chai 700 tk kore",
+            "সিমই পাওয়া যায় না আবার অ্যাপ দিয়ে কি করব ২,১ টা পাওয়া গেলেও দাম চায় ৭০০ টাকা করে",
+            "sim e to pai na ami Rajshahi thaki kothai pabo apnar skitto sim",
+            "সিমই তো পাই নাই। আমি রাজশাহী থাকি কোথায় পাবো আপনার স্কিটো সিম",
+            "sim er Malikana poriborton korty holy ki korty hoy, amr sim ti 3g 4g korty hoby",
+            "সিম এর মালিকানা পরিবর্তন করতে হলে কি কি করতে হয় আমার সিম টি ৩জি ৪জি করতে হবে ",
+            "sim er registration cancel korbo kivabe? connection 2g to 4g change hoite thake always+ speed o pai na",
+            "সিম এর রেজিস্ট্রেশ্ন বাতিল করব কিভাবে?কানেকশ্ন ২জি টু ৪জি চেঞ্জ হতে থাকে সবসময়+ স্পিড ও পাই না",
+            "SIM er registration cancel kore kivabe?",
+            "সিম এর রেজিস্ট্রেশ্ন ক্যান্সেল করে কিভাবে",
+            "sim golo koi pabo? i wana buy",
+            "সিম গুলো কই পাবো? কিনতে চাই",
+            "Sim golo kothai paoya jai,r price koto?",
+            "সিম গুলো কোথায় পাওয়া যায় আর প্রাইস কত",
+            "SIM hariya gece. kivabe uthabo?",
+            "সিম হারিয়ে গিয়েছে। কিভাবে উঠাবো",
+            "Sim hariye felesi ekhon block korbo kibabe?",
+            "সিম হারিয়ে ফেলসি এখন ব্লক করবো কিভাবে",
+            "sim hariye geche sim tula jabe abar",
+            "সিম হারিয়ে গেছে সিম তোলা যাবে আবার",
+            "Sim hariye gele ki , sim tula jabe",
+            "সিম হারিয়ে গেলে কি সিম তোলা যাবে?",
+            "Sim inactive dekhasce, Recharge korle Recharge hoy na, any help...",
+            "সিম ইন একটিভ দেখাচ্ছে ।রিচার্জ করলে রিচার্জ হয় না।কোনো সাহায্য?",
+            "SIM ke dual",
+            "সিম কে ডুয়াল",
+            "Sim khotay pabo",
+            "সিম কোথায় পাবো",
+            "Sim ki dokane pawa jabe",
+            "সিম কি দোকানে পাওয়া যাবে",
+            "Sim ki postpaid to prepaid kora jaba ki.",
+            "সিম কি পোস্টপেইড টু প্রিপেইড করা যাবে কি",
+            "sim kinbo",
+            "সিম কিনব",
+            "Sim kinbo Gazipur e nai",
+            "সিম কিনবো গাজীপুর এ নাই",
+            "Sim kinbo kivabe?",
+            "সিম কিনবো কিভাবে",
+            "Sim kinbo kotha theke",
+            "সিম কিনবো কোথা থেকে",
+            "Sim kinbo koy pabo",
+            "সিম কিনবো কই পাবো",
+            "Sim kinte chai",
+            "সিম কিনতে চাই",
+            "sim kinte chai... dhaka ar khothay paoya jai jananen plz",
+            "সিম কিনতে চাই ।ঢাকার কোথায় পাওয়া জায় জানাইয়েন প্লিজ",
+            "sim kinte chassi but pabo kothay???",
+            "সিম কিনতে চাচ্ছি কিন্তু পাবো কোথায়",
+            "Sim kivhaba 4g korta hoy",
+            "সিম কিভাবে ৪জি করতে হয়",
+            "Sim kmne kinbo",
+            "সিম কিভাবে কিনব",
+            "Sim koi pabo?",
+            "সিম কই পাবো",
+            "sim koi pabo... bogray",
+            "সিম কই পাবো বগুড়ায়",
+            "Sim koi pbo.? Rangpur",
+            "সিম কই পাবো রংপুর",
+            "Sim kothai pabo kaw bolba? Ami bansree te thaki",
+            "সিম কোথায় পাবো কেউ বলবে? আমি বনশ্রী তে থাকি",
+            "Sim lagbe",
+            "্সিম লাগবে",
+            "Sim lagbe amar",
+            "সিম লাগবে আমার",
+            "sim lagbe amr but kothai pabo? rangpur a pawa jaina",
+            "সিম লাগবে আমার কিন্তু কোথায় পাবো? রংপুর এ পাওয়া যায় না",
+            "Sim lagbo",
+            "সিম লাগবে",
+            "SIM M N P কি এখন করা সম্ভব",
+            "সিম এম এন প কি এখন করা সম্ভব",
+            "Sim Nite ki ki Documents lagbe?????",
+            "সিম নিতে কি কি ডকুমেন্টস লাগবে",
+            "Sim Nosto Hoya Gele Ki Abar Tola Jabe Gele Koto Taka Nibe",
+            "্সিম নষ্ট হয়ে গেলে কি আবার তোলা যাবে গেলে কত টাকা নিবে",
+            "Sim Number Replacement koto kora ?",
+            "সিম নাম্বার রিপ্লেসমেন্ট কত করে?",
+            "Sim odar krte chai ami",
+            "সিম অর্ডার করতে চাই আমি",
+            "sim off korte hole ki korte plz",
+            "সিম অফ করতে হলে কি করতে প্লিজ",
+            "Sim online e order korechi koto din lagbe delivery Korte? 02-05-2021 tarikh e",
+            "সিম অনলাইন এ অর্ডার করেছি কত দিন লাগবে ডেলিভারি করতে",
+            "sim pabo kotai?",
+            "্সিম পাবো কোথায়",
+            "Sim pabo kotay ? Dhaka collage",
+            "সিম পাবো কোথায়? ঢাকা কলেজ",
+            "Sim pabo kothay",
+            "সিম পাবো কোথায়",
+            "Sim pailam na ",
+            "সিম পাবো কোথায়",
+            "sim paowa jaiba ki",
+            "সিম পাওয়া যাবে কি",
+            "Sim paua jave karo kase??",
+            "সিম পাওয়া যাবে কারো কাছে?",
+            "Sim pawa jabe ki??? Kothaw pawa jachce na",
+            "সিম পাওয়া যাবে কি? কোথাও পাওয়া যাচ্ছে না",
+            "Sim puk cord বসছে কি ভাবে কি থিক করব",
+            "সিম পাক কোড বসছে কিভাবে কি ঠিক করব",
+            "Sim purchase kora ki ekhon chalu ase?",
+            "সিম বিক্রয় করা কি এখন চালু আছে?",
+            "Sim r Configuration Code kivabe dbe?",
+            "সিম এর কনফিগারেশন কোড কিভাবে দিবে?",
+            "Sim registration failed dekhay ken?",
+            "সিম রেজিস্ট্রেশন ফেইল্ড দেখায় কেন",
+            "Sim Rejected lekha dekhasse",
+            "্সিম রিজেক্টেড লেখা দেখাচ্ছে",
+            "sim replace chalo ache? Koto taka lagbe.",
+            "সিম রিপ্লেস চালু আছে? কত টাকা লাগবে?",
+            "Sim replace er process bolen???",
+            "সিম রিপ্লেস এর প্রসেস বলেন?",
+            "Sim replace fee koto?",
+            "সিম রিপ্লেস ফি কত?",
+            "Sim replace korle Kono offer ase ki ?",
+            "সিম রিপ্লেস করলে কোন অফার আছে কি?",
+            "Sim replace koto?",
+            "সিম রিপ্লেস কত?",
+            "Sim replace offer ke?",
+            "সিম রিপ্লেস অফার কি",
+            "Sim replace pric koto",
+            "সিম রিপ্লেস প্রাইজ কত?",
+            "Sim Replace price????",
+            "সিম রিপ্লেস প্রাইস?",
+            "sim replacea koto taka",
+            "সিম রিপ্লেস কত টাকা",
+            "Sim replacement a koto tk lage??",
+            "সিম রিপ্লেসমেন্ট এ কত টাকা লাগে?",
+            "Sim replacement ar jonne ki ki process complete korte hoy?",
+            "সিম রিপ্লেস্মেন্ট এর জন্যে কি কি ধাপ পূরণ করতে হয়?",
+            "Sim replacement charge koto akhon?",
+            "সিম রিপ্লেস্মেন্ট চার্জ কত এখন?",
+            "Sim replacement charge koto skitto te",
+            "সিম রিপ্লেসমেন্ট চার্জ কত স্কিটো তে",
+            "Sim replacement charge koto tk?",
+            "সিম রিপ্লেস্মেন্ট চার্জ কত টাকা",
+            "Sim replacement charge??",
+            "সিম রিপ্লেস্মেন্ট চার্জ?",
+            "Sim replacement charge???",
+            "সিম রিপ্লেসমেন্ট চার্জ?",
+            "Sim replacement cost",
+            "সিম রিপ্লেস্মেন্ট এর খরচ?",
+            "Sim replacement er ki kono offer ekhon available ache?",
+            "সিম রিপ্লেসমেন্ট এর কি কোনো অফার এখন প্রযোজ্য আছে?",
+            "Sim replacement er offer dau Skitto",
+            "সিম রিপ্লেসমেন্ট এর অফার দাও স্কিটো",
+            "Sim replacement er rate koto",
+            "সিম রিপ্লেসমেন্ট এর রেট কত",
+            "Sim replacement er somporke jante chacchi",
+            "সিম রিপ্লেসমেন্ট সম্পর্কে জানতে চাচ্ছি",
+            "SIM replacement fee koto tk?",
+            "সিম রিপ্লেসমেন্ট ফি কত টাকা",
+            "Sim replacement karte jabo koi???",
+            "সিম রিপ্লেসমেন্ট করতে কই যাব?",
+            "Sim replacement korla ki balance 0 tk thakte hba?",
+            "সিম রিপ্লেসমেন্ট করলে কি ব্যালেন্স ০ টাকা থাকতে হবে?",
+            "Sim replacement Korle Kono offer ace",
+            "সিম রিপ্লেসমেন্ট করলে কোন অফার আছে?",
+            "Sim replacement korte ki customer care e jete hbe ? Naki j kono sim er dukan a gele hbe?",
+            "সিম রিপ্লেসমেন্ট করতে কি কাস্টমার কেয়ার এ যেতে হবে? নাকি যে কোন সিম এর দোকান এ গেলে হবে?",
+            "Sim replacement Korte ki ki lage",
+            "সিম রিপ্লেসমেন্ট করতে কি কি লাগে",
+            "sim replacement korte kono charge lage",
+            "সিম রিপ্লেস্মেন্ট করতে কোন চার্জ লাগে?",
+            "Sim replacement korte koto taka lagbe",
+            "সিম রিপ্লেসমেন্ট করতে কত টাকা লাগবে?",
+            "Sim replacement koto tk..",
+            "সিম রিপ্লেসমেন্ট কত টাকা",
+            "Sim replacement koto?",
+            "সিম রিপ্লেসমেন্ট কত?",
+            "Sim replacement ment charge koman r gp star grahok hole ki ki subidha pawa jabe?",
+            "সিম রিপ্লেসমেন্ট চার্জ কেমন আর জিপি স্টার গ্রাহক হলে কি কি সুবিধা পাওয়া যাবে?",
+            "Sim replacement shomporke bistarito bolon",
+            "সিম রিপ্লেসমেন্ট সম্পর্কে বিস্তারিত বলুন",
+            "sim replacement এবং ownership transfer এই সেবাটি চালু আছে?",
+            "সিম রিপ্লেসমেন্ট এবং ওনারশীপ ট্রান্সফার এই সেবাটি চালু আছে?",
+            "Sim replacement করতে কত টাকা লাগবে।",
+            "সিম রিপ্লেসমেন্ট করতে কত টাকা লাগবে?",
+            "Sim replase koto tk.?? Simer NID car transfer korte chai... er junnu konu fee lagbe ki????",
+            "্সিম রিপ্লেস কত টাকা সিমের এন আই ডি কার্ড ট্রান্সফার করতে চাই। এর জন্য কোনো ফি লাগবে কি?",
+            "sim replce korte koto tk lage",
+            "সিম রিপ্লেস করতে কত টাকা লাগে",
+            "Sim reples korle kono offer ase",
+            "সিম রিপ্লেস করলে কোন্ অফার আছে?",
+            "sim replies korte koto tk lagbe",
+            "সিম রিপ্লেস করতে কত টাকা লাগবে?",
+            "SIM sell Kobe suru Hobe",
+            "সিম বিক্রি কবে শুরু হবে",
+            "Sim sell start hoice?",
+            "সিম বিক্রি শুরু হয়েছে?",
+            "Sim selling ki Start hoise?",
+            "সিম বিক্রি কি শুরু হয়েছে?",
+            "Sim stay home bolsy kno bujlm na plz janaben",
+            "সিম স্টে হোম বলেছে কেন বুঝলাম না দয়া করে জানাবেন",
+            "sim ta akhon kothay pabo",
+            "সিম টা এখন কোথায় পাব?",
+            "Sim ta ami nite cai but khuje pai na,location:savar",
+            "সিম টা আমি নিতে চাই কিন্তু খুজে পাই না , ঠিকানা সাভার",
+            "Sim ta haraia gase akhon sim ta kotha thake wuthabo",
+            "সিম টি হারিয়ে গিয়েছে এখন সিম টা কোথা থেকে উঠাবো",
+            "Sim ta I'd card Chara meoya hoyece,akhon simta te ki bikas kingba nogod khula account khula jabe,kindly bolben pls...",
+            "সিম টা আইডি কার্ড ছাড়া নেয়া হয়েছে। এখন সিম এ কি বিকাশ কিংবা নগদ খোলা একাউন্ট খোলা যাবে? দয়া করে বলবেন ?",
+            "Sim ta kothae pabo?",
+            "সিম টা কোথায় পাবো?",
+            "Sim ta kothay pabo? Nd ki ki lagche kinte...plz let me know",
+            "সিম টা কোথায় পাবো? আর কি কি লাগছে কিনতে, দয়া করে আমায় জানাবেন",
+            "Sim ta kuthai pabo",
+            "সিম টা কোথায় পাবো?",
+            "sim ta pabo koi?",
+            "সিম টা পাবো কই",
+            "Sim ta to pai na",
+            "সিম তো পাই না",
+            "Sim ta vlo, offer o motamuti vlo but net speed slow, r apps ta te o kob problem dakhai",
+            "সিম  টা ভালো, অফার ও মোটামোটি ভালো কিন্তু নেট স্পিড স্লো। আর অ্যাপ্স টা তে অ খুব সমস্যা দেখায়",
+            "Sim tah ki Ctg r Agrabad er office eh paoya jabe?",
+            "সিম টা কি চিটাগং আর আগ্রাবাদ এর অফিস এ পাওয়া যাবে?",
+            "sim tah onek khujeci kintu pasci na..!!",
+            "সিম টা অনেক খুজেছি কিন্তু পাচ্ছি না",
+            "Sim tar dam koto",
+            "সিম এর দাম কত",
+            "Sim tar dam koto kew bolben",
+            "সিম এর দাম কত কেউ বলবেন?",
+            "Sim theke data use kora jacchena + call jacchena.. mane ki",
+            "সিম থেকে ডেটা ব্যবহার করা যাচ্ছে না + কল যাচ্ছে না।মানে কি?",
+            "Sim ti kivabe kinbo",
+            "সিম টি কিভাবে কিনব",
+            "Sim unblock ki vabe korbo please help me",
+            "সিম আনব্লক কিভাবে করবো দয়া করে সাহায্য করুন",
+            "Sim vengge gese r network passe na,,, new sim tulte Chay,,,,,ki ki lagbe r koto tk lagbe,,,?",
+            "সিম ভেঙ্গে গেছে আর নেটওয়ার্ক পাচ্ছে না। নতুন সিম তুলতে চাই। কি কি লাগবে আর কত টাকা লাগবে?",
+            "sim কোথায পাবো",
+            "্সিম কোথায় পাবো? ",
+            "sim টার দাম কত??? আর sim টা কোন জায়গায় পাওয়া যাবে???",
+            "সিম টার দাম কত আর সিম টা কোন জায়গায় পাওয়া যাবে?",
+            "sim টি সিলেট কোথায় পাবো??",
+            "সিম টী সিলেট কোথায় পাবো",
+            "SIM রিপলেস করতে কত টাকা লাগবে?",
+            "সিম রিপ্লেস করতে কত টাকা লাগবে",
+            "Simer malik transfer kora jabe",
+            "সিমের মালিক ট্রান্সফার করা যাবে?",
+            "Simer malikanar poriborton kora hole bikash, nagad account active thakbe naki disable hoye jabe?",
+            "সিমের মালিকানার পরিবর্তন করা হলে বিকাশ, নগদ একাউন্ট এক্টিভ থাকবে নাকি নিষ্ক্রিয় হয়ে যাবে?",
+            "Simon insert hoye geche ki korbo Karo Jana thakle janan",
+            "সিম ইন্সার্ট হয়ে গেছে কি করব কারো জানা থাকলে জানাবেন",
+            "Simta kothay pabo vai dinajpurer",
+            "সিম টা কোথায় পাবো ভাই দিনাজপুরের",
+            "simta pabo koi??aita ki odar korta hoi naki?",
+            "সিম টা পাবো কই। এইটা কি অর্ডার করতে হয় নাকি",
+            "Simta paoya jabe kothay",
+            "সিম টা পাওয়া যাবে কোথায়",
+            "Simti kar id diye bio metric kora kivabe janbo",
+            "সিমটি কার আইডী দিয়ে বায়োমেট্রিক করা কিভাবে জানবো",
+            "Sin ownership transfer ar prossess gola ki ki bolen akto",
+            "সিম মালিকানা হস্তান্তর প্রক্রিয়া গুলা কি কেউ বলেন",
+            "Sing up kmn kre korbo bujhtechi na j",
+            "সাইন আপ কিভাবে করে করব বুঝতে পারছি না",
+            "Sir amar akti bsp5 sim thokar ki krajay",
+            "স্যার আমার একটী বেস্প৫ সিম ঠকার কি করা যায়",
+            "Sir Rajshahi te kivabe skitto sim ta pabo???",
+            "স্যার রাজশাহী তে কিভাবে স্কিটো সিম টা পাবো",
+            "sir skitto ki 4G sim kina kabe?????help",
+            "স্যার স্কিটো কি ৪জি সিম কেনা যাবে? হেল্প",
+            "sir বিদেশে গিয়েও সিম ব্যাবহার করতে চাই সে ক্ষেত্রে আমাকে কি করতে হবে",
+            "স্যার বিদেশে গিয়েও সিম ব্যাবহার করতে চাই সে ক্ষেত্রে আমাকে কি করতে হবে",
+            "sir, amar akta sim lagbe toh ki vabe nite parbo jodi ektu bolten plz",
+            "স্যার, আমার একটা সিম লাগবে তো কিভাবে নিতে পারবো যদি একটূ বলতেন প্লিজ",
+            "Sir, Location track korar system ta kindly bolun......",
+            "স্যার লোকেশন ট্র্যাক করার সিস্টেম টা দয়া করে বলুন",
+            "Sir, PABNA ISHURDI te ai sim ti paoa jabe..",
+            "্স্যার, পাবনা ঈশ্বরদী তে এই সিম টী পাওয়া যাবে",
+            "Sirajganj a lagbe?? Paya jabe????",
+            "সিরাজগঞ্জে লাগবে। পাওয়া যাবে?",
+            "Sirajganj a skitto sim kothai paya jabe",
+            "সিরাজগঞ্জে স্কিটো সিম কোথায় পাওয়া যাবে",
+            "Sirajganj ar kothai pawo jabe...?",
+            "সিরাজগঞ্জের কোথায় পাওয়া যাবে",
+            "sirajganj er kothay pawaa jbe ei sim?",
+            "সিরাজগঞ্জের কোথায় পাওয়া যাবে এই সিম",
+            "Sirajganj er ullapara theke..... Plzz amar sim tir replacement lagbe.. Plzzz help... Emergency ..",
+            "সিরাজগঞ্জের উল্লাপাড়া থেকে। প্লিজ আমার সিম টির রিপ্লেস্মেন্ট লাগবে। প্লিজ সাহায্য করুন। ইমারজেন্সি",
+            "Sirajganj kothai skitto sim pabo??",
+            "সিরাজগঞ্জ কোথায় স্কিটো সিম পাবো",
+            "Sirajgong jela abong ullapar thanar moddhe konjayga theke pabo skitto sim",
+            "সিরাজগঞ্জ জেলা এবং উল্লাপারা থানার মধ্যে কন জায়গায় থেকে পাবো স্কিটো সিম",
+            "Sirajgonj koti pao jaba",
+            "সিরাজগঞ্জ কই পাওয়া যাবে",
+            "Sittku sim lagbe.koi pabo",
+            "স্কিটো সিম লাগবে। কই পাবো",
+            "skiito sim Dhaka Mohammadpur area kothy pawa jaba...plz help me",
+            "স্কিটো সিম ঢাকার মোহাম্মদপুর এলাকায় কোথায় পাওয়া যাবে। দয়া করে সাহায্য করুন",
+            "Skiito sim pawa Jai na Kno Pabnai ..Ami kinbo",
+            "স্কিটো সিম পাওয়া যায় না কেন পাবনায়। আমি কিনব",
+            "skito Forum এ রেজিষ্ট্রেশন করতে পারতেছিনা।বারবার username ভুল দেখায়,লেখা আসে Uh- oh, this name is not available. Please chaos a new one. এ সমস্যার সমাধান চাই প্লিজ।",
+            "",
+            "Skito Sim Haria Gaca , Akhon Ki Vaba Replesment Korbo, Gp Sentera Gacilam But Oder Kaca Skito Kit Nai",
+            "স্কিটো সিম হারিয়ে গেছে। এখন কিভাবে রিপ্লেস্মেন্ট করবো। জিপি সেন্টার গিয়ে ছিলাম কিন্তু ওদের কাছে স্কিটো কিট নেই",
+            "skito sim kothai pabo????",
+            "স্কিটো সিম কোথায় পাব?",
+            "Skito SIM কিনতে চাই অনলাইনে কি ভাবে কিনবো",
+            "স্কিটো সিম কিনতে চাই। অনলাইনে কিভাবে কিনবো",
+            "skito আনেক দিন ব্যবহার না করে। আর চালু হচ্ছে না। চালু করার কোন উপায় আছে?",
+            "স্কিটো অনেক দিন ব্যবহার না করে। আর চালু হচ্ছে না। চালু করার কোন উপায় আছে?",
+            "skitoo sim akta amar dorkar kothay pabo",
+            "স্কিটো সিম একটা আমার দরকার কোথায় পাবো",
+            "Skitoo sim koi pabo",
+            "স্কিটো সিম কোথায় পাব",
+            "skitro sim to bogura ta paowya jacca na ja sim bikri kora tadar numbar den",
+            "স্কিটো সিম বগুরা তে পাওয়া যাচ্ছে না যে সিম বিক্রি করে তাদের নাম্বার টা দেন",
+            "Skitti sim kothai pabo",
+            "স্কিটো সিম কোথায় পাবো",
+            "Skittio SIM kuthai pabo",
+            "স্কিটো সিম কোথায় পাবো",
+            "Skittles SIM price koto t r skitoo SIM kothai pabo",
+            "স্কিটো সিম এর দাম কত আর স্কিটো সিম কোথায় পাবো",
+            "Skitto ,,, টাংগাইলের মির্জাপুর সিম কোথায় পাওয়া যাবে?",
+            "স্কিটো টাঙ্গাইলের মির্জাপুর সিম কোথায় পাওয়া যাবে?",
+            "Skitto Skitto আমি chill deals teke বিকাশের মাধ্যমে টাকা পাঠাই। বিকাশ থেকে আমার মেসেজটি আসে Payment Tk 398.00 to Grameenphone Ltd-SKITTO-RM44474 is successful. Balance Tk 692.50. TrxID 9IF4AJ308O at 15/09/2022 18:44 ২৪ ঘন্টা হয়ে গেছে এখনো আমার কোন ডাটা আসেনি। আমি প্রায় সময় এই প্যাকেজটা নি। ধন্যবাদ",
+            "স্কিটো স্কিটো আমি চিল ডিলস থেকে বিকাশের মাধ্যমে টাকা পাঠাই। বিকাশ থেকে আমার মেসেজটি আসে "
+        ],
+        "responses": "আপনার নিকটস্থ কাস্টমার কেয়ারে যোগাযোগ করুন।",
+        "context_set": ""
+    },
+    {
+        "tag": "query47",
+        "pattern": [
+            "Sim 4G করতে চাই, কিভাবে করবো।",
+            "সিম ৪জি করতে চাই।কিভাবে করবো"
+        ],
+        "responses": "আপনার নিকটস্থ গ্রামীনফোন কাস্টমার কেয়ার এ যান।",
+        "context_set": ""
+    },
+    {
+        "tag": "query48",
+        "pattern": [
+            "Sim ke কেটে গুস্তের সন্গে খামু",
+            "সিম কে কেটে গোস্তের সঙ্গে খাবো"
+        ],
+        "responses": "আপনার প্রশ্নটি অস্পষ্ট। দয়া করে আবার লিখুন।",
+        "context_set": ""
+    },
+    {
+        "tag": "query49",
+        "pattern": [
+            "Sirajgonj hobe na",
+            "সিরাজগঞ্জ হবে না",
+            "Skito sim a age available koran",
+            "স্কিটো সিম এ আগে এভেইলেবল করান",
+            "Skitto SIM available ace",
+            "স্কিটো সিম পর্যাপ্ত আছে"
+        ],
+        "responses": "আপনার প্রশ্নটি স্পষ্ট নয়। অনুগ্রহ করে আবার জিজ্ঞেস করুন।",
+        "context_set": ""
+    },
+    {
+        "tag": "query50",
+        "pattern": [
+            "Skitto meye kunudin koto tarik",
+            "স্কিটো মেয়ে কনদিন কত তারিখ"
+        ],
+        "responses": "আপনার মতামত অস্পষ্ট। দোয়াকরে আবার উল্লেখ করুন।",
+        "context_set": ""
+    },
+    {
+        "tag": "query51",
+        "pattern": [
+            "Skitto Apnara zodi mb er moto kore, minute er option ta diten. Onk valo hoto Only min er option...",
+            "স্কিটো আপ্নারা যদি এমবি এর মত করে মিনিট এর অপশন টা দিতেন অনেক ভালো হতো শুধু মিনিট এর অপশন"
+        ],
+        "responses": "আপনার মতামত এর জন্য ধন্যবাদ।",
+        "context_set": ""
+    },
+    {
+        "tag": "query52",
+        "pattern": [
+            "Sim offer changes koren 29 tk 1gb na die 2gb den",
+            "সিম অফার পরিবর্তন করেন ২৯ টাকা ১ জিবি না দিয়ে ২ জিবি দেন",
+            "sim replacement charge is 230 taka,please reduce this charge",
+            "সিম রিপ্লেসমেন্ট চার্জ ২৩০ টাকা। প্লিজ এই চার্জ কমান",
+            "Sir postpaid sim e MB card keno uthe na??",
+            "স্যার পোস্টপেইড সিম এ এমবি কার্ড কেন উঠে না?",
+            "Sir... mayad aro baranor proyojon ak mas hoya usit... package dam taw besi...aro komanu ucit",
+            "স্যার মেয়াদ আরো বাড়ানোর প্রয়োজন এক মাস হওয়া উচিত। প্যাকেজ দাম টাউ বেশি। আরো কমানো উচিত",
+            "Skito সিম আমার খব‌ই প্রিয় ছিল। কিন্তু বর্তমানে যে আবস্থা সিম ব্যবহার করার মতোই নেই । এত মূল্য বৃদ্ধি। খুবই হতাশা জনক। 1GB--21tk দিয়ে কিনতাম এখন তার দাম আমার কাছে আকাশ ছোঁয়া।",
+            "স্কিটো সিম আমার খব‌ই প্রিয় ছিল। কিন্তু বর্তমানে যে আবস্থা সিম ব্যবহার করার মতোই নেই । এত মূল্য বৃদ্ধি। খুবই হতাশা জনক। 1GB--21tk দিয়ে কিনতাম এখন তার দাম আমার কাছে আকাশ ছোঁয়া।",
+            "skitto app বাদে কোনো web থেকে log in করে service টি দিলে ভালো হত!",
+            "স্কিটো অ্যাপ বাদে কোনো ওয়েব থেকে লগ ইন করে সার্ভিস টি দিলে ভালো হতো",
+            "Skitto er net mb price eto besi kno??? Price ro komano dorkar",
+            "স্কিটো এর নেট এমবি দাম এত বেশি কেন? দাম টা কমানো দরকার",
+            "Skitto Instagram pack প্রয়োজন",
+            "স্কিটো ইন্সটাগ্রাম প্যাক প্রয়োজন",
+            "Skitto manager রা এত রূড ব্যবহার কেন করে? আমি আমার প্রবলেমটা বলতেছি এবং সে বলে আমি যেটুকু প্রশ্ন করছি তার উত্তর দিবেন।তাহলে কি প্রবলেম বলব না নাকি সে যা বলবে শুধু সেটুকু শুনতে থাকব? আর প্রায় মাসখানেক ধরে আমি এই সমস্যার সম্মুখীন হচ্ছি। প্রতি সপ্তায় দু থেকে তিন বার হঠাৎ করে ইন্টারনেট কাজ করে না কাস্টমার কেয়ারে কল দিলে তারা তাদের মত কথা বলে আর দু তিন ঘন্টা সময় লাগে প্রবলেমটা সলভ হতে....",
+            "স্কিটো এর ম্যানেজার রা এত রূড ব্যবহার কেন করে? আমি আমার প্রবলেমটা বলতেছি এবং সে বলে আমি যেটুকু প্রশ্ন করছি তার উত্তর দিবেন।তাহলে কি প্রবলেম বলব না নাকি সে যা বলবে শুধু সেটুকু শুনতে থাকব? আর প্রায় মাসখানেক ধরে আমি এই সমস্যার সম্মুখীন হচ্ছি। প্রতি সপ্তায় দু থেকে তিন বার হঠাৎ করে ইন্টারনেট কাজ করে না কাস্টমার কেয়ারে কল দিলে তারা তাদের মত কথা বলে আর দু তিন ঘন্টা সময় লাগে প্রবলেমটা সলভ হতে....",
+            "skitto net eto slow k9???",
+            "স্কিটো নেট এর স্লো কেন",
+            "Skitto sim e bundle offer add kora ucit like Airtel combo pack .. (minutes + Data)",
+            "স্কিটো সিম এ বান্ডেল অফার যুক্ত করা উচিত যেমন এয়ারটেল কম্বো প্যাক (মিনিট+ ডাটা)",
+            "skitto sim এ Mb না থাকলে মেসেনজার use করা যায় না। কেন? GP তে এই সুবিধা আছে.আশা করি অতি শিগ্রই skitto sim এ এই সুবিধা চালু করবেন।কারন এই অসুবিধার জন্য অনেকেই অনআগ্রহ পকাশ করে।",
+            "স্কিটো সিম এ এমবি না থাকলে মেসেঞ্জার ব্যবহার করা যায় না কেন জিপি তে এই সুবিধা আছে.আশা করি অতি শিগ্রই skitto sim এ এই সুবিধা চালু করবেন।কারন এই অসুবিধার জন্য অনেকেই অনআগ্রহ পকাশ করে। Bangla text",
+            "Skitto te internet free kore deya hok..",
+            "স্কিটো তে ইন্টারনেট ফ্রি করে দেয়া হোক",
+            "Skitto te naki mb kom dam,,tai ekta sim kinchi,,ekhon dekhi dam to kom moteo na + network problem প্রচুর",
+            "স্কিটো তে নাকি এমবি কম দাম।তাই একটা সিম কিনেছি। এখন দেখি দাম তো কম মোটেও না+ নেটওয়ার্ক সমস্যা প্রচুর"
+        ],
+        "responses": "আপনার মতামতের জন্য ধন্যবাদ।",
+        "context_set": ""
+    },
+    {
+        "tag": "query53",
+        "pattern": [
+            "skitto te majhe majhe to offer dewa jai naki??? at least grahok der khushi korar jonno",
+            " স্কিটো তে মাঝে মাঝে তো অফার দেয়া যায় নাকি? অন্তত গ্রাহক দের খুশি করার জন্য"
+        ],
+        "responses": "আপনার মতামতের জন্য ধন্যবাদ। আমরা অবশ্যই এটি ভেবে দেখব।",
+        "context_set": ""
+    },
+    {
+        "tag": "query54",
+        "pattern": [
+            "Skitto r net e huge problem. Please solve that as soon as possible",
+            "স্কিটো এর নেট এ অনেক সমস্যা ।দয়া করে এটা সমাধান করুন"
+        ],
+        "responses": "আপনার মতামতের জন্য ধন্যবাদ। আমরা এটি দেখব।",
+        "context_set": ""
+    },
+    {
+        "tag": "query55",
+        "pattern": [
+            "shokol Grameen sim a free Facebook choltase kintu..Amar sim a Khali load ney ektu check den bistarito dekhen",
+            "সকল গ্রামীন সিম এ ফ্রী ফেইসবুক চলছে কিন্তু আমার সিম এ খালি লোড নেয় একটু চেক দেন বিস্তারিত দেখেন"
+        ],
+        "responses": "আপনার মতামতের জন্য ধন্যবাদ। আমরা দেখছি।",
+        "context_set": ""
+    },
+    {
+        "tag": "query56",
+        "pattern": [
+            "Skitto sim aga onk valo selo Akon ফালতু হয়ে গেছে mb দাম বেশি প্রচুর আর FREE messenger চলে না এটা সব থেকে কষ্টের",
+            "স্কিটো সিম আগে অনেক ভালো ছিল এখন ফালতু হয়ে গেছে এমবি দাম বেশী প্রচুর আর ফ্রী মেসেঞ্জার চলে না এটা সব থেকে কষ্টের"
+        ],
+        "responses": "আপনার মতামতের জন্য ধন্যবাদ। আমরা যথাসাধ্য চেষ্টা করব।",
+        "context_set": ""
+    },
+    {
+        "tag": "query57",
+        "pattern": [
+            "Sara ta din kesar ato server problem hoi buje na. Ato valo kora app thaka internet balance kinta pare na,balance koto asa sheta thaka jai ke shomossa ai sim tar.koba server ar problem solve hoba ???",
+            "সারাটা দিন কিসের এত সার্ভার সমস্যা হয় বুঝি না। এত ভালো করে অ্যাপ থেকে ইন্টারনেট ব্যালেন্স কিনতে পারি না, ব্যালেন্স কত আছে সেটা থাকা যেই কে সমসস্যা এই সিম তার"
+        ],
+        "responses": "আপনার মতামতের জন্য ধন্যবাদ। বিষয়টি আমরা দেখছি।",
+        "context_set": ""
+    },
+    {
+        "tag": "query58",
+        "pattern": [
+            "Skitto sim er call rate koto? Koto minute kotha bollam koto tk katlo kono kisu notification ashena kno",
+            "স্কিটো সিম এর কল রেট কত? কত মিনিট কথা বললাম কত টাকা  কাটলো কোন কিছু নোটিফিকেশন আসে না কেন"
+        ],
+        "responses": "আপনার মূল্যবান মন্তব্যের জন্য ধন্যবাদ।",
+        "context_set": ""
+    },
+    {
+        "tag": "query59",
+        "pattern": [
+            "Saim problem amaro hosse.",
+            "একই সমস্যা আমারও হচ্ছে "
+        ],
+        "responses": "আপনার সমস্যাটি জানানোর জন্য ধন্যবাদ। আমরা খুব শীঘ্রই ব্যবস্থা গ্রহণ করবো।",
+        "context_set": ""
+    },
+    {
+        "tag": "query60",
+        "pattern": [
+            "Sim টা ১৫ তারিখ অফ করেছিলাম।আজকে প্রায় হাফ এন আওয়ার আগে চালু করেছি।আর চালু করার সাথে সাথেই প্রথম মেসেজ পেলাম ৫০% ডেটা শেষ।এর প্রায় ১০মিনিট পর বলে ৮০% ডেটা শেষ। এই টা কোন ধরনের কথা?!? আমি ত সিম অফ রেখেছিলাম।তাহলে আমার নিউ সিম এর বোনাস এর ১.৫ জিবি ডেটা ৮০০ এমবি হয়ে যায় কেমনে?!?!? স্কিটো কি ডেটা ও চুরি করা শুরু করলো?",
+            "সিম টা ১৫তারিখ অফ করেছিলাম।আজকে প্রায় হাফ এন আওয়ার আগে চালু করেছি।আর চালু করার সাথে সাথেই প্রথম মেসেজ পেলাম ৫০% ডেটা শেষ।এর প্রায় ১০মিনিট পর বলে ৮০% ডেটা শেষ। এই টা কোন ধরনের কথা?!? আমি ত সিম অফ রেখেছিলাম।তাহলে আমার নিউ সিম এর বোনাস এর ১.৫ জিবি ডেটা ৮০০ এমবি হয়ে যায় কেমনে?!?!? স্কিটো কি ডেটা ও চুরি করা শুরু করলো? "
+        ],
+        "responses": "আপনার সমস্যার জন্য দুঃখিত। আমরা ব্যাপারটি দেখছি।",
+        "context_set": ""
+    },
+    {
+        "tag": "query61",
+        "pattern": [
+            "Sir Chotrogram jela sitakundo upojela ki 4g aowotabukto",
+            "স্যার চট্টগ্রাম জেলা সীতাকুণ্ড উপজেলা কি ৪জি আওতা ভুক্ত?"
+        ],
+        "responses": "আপনি লিস্ট চেক করতে পারেন।",
+        "context_set": ""
+    },
+    {
+        "tag": "query62",
+        "pattern": [
+            "Skitto app download hocche na",
+            "স্কিটো অ্যাপ ডাউনলোড হচ্ছে না",
+            "skitto sim a login korte partesi na...facebook diye kholcilam akhon ki fb te login na kore password change kora jabe",
+            "স্কিটো সিম এ লগিন করতে পারতেসি না। ফেসবুক দিয়ে খুলেছিলাম এখন কি এফ বি তে লগিন না করে পাসওয়ার্ড চেঞ্জ করা যাবে?"
+        ],
+        "responses": "আবার চেষ্টা করে দেখুন।",
+        "context_set": ""
+    },
+    {
+        "tag": "query63",
+        "pattern": [
+            "Skitto Raat 8 Tar samay theke net bondho kore disey akhono chalu kore NAI aisob itraamy ki kortese era ki nirlojjo ! Eder ki lojja sorom NAI !!",
+            "স্কিটো রাত ৮ টার সময় থেকে নেট বন্ধ করে দিয়েছে এখন চালু করে নাই এইসব ইতরামি কি করতেসে এরা কি নির্লজ্জ! এদের কি লজ্জা শরম নাই!!",
+            "Skitto sim diya age kotha boltam sob somoy, ekhon ekdom na. Sudhu net use kori. Ekhon r seta-o chole na. Fele deyar somoy holo mone hoy.",
+            "স্কিটো সিম দিয়ে আগে কথা বলতাম সব সময় এখন একদম না। শুধু নেট ব্যবহার করি। এখন আর সেটা ও চলে না। ফেলে দেয়ার সময় হলো মনে হয়"
+        ],
+        "responses": "আমরা আন্তরিক ভাবে দুঃখিত।",
+        "context_set": ""
+    },
+    {
+        "tag": "query64",
+        "pattern": [
+            "Skitto sim ager Theke onek pocha hoye geche ekhon are mb free deyna",
+            "স্কিটো সিম আগের থেকে অনেক পচা হয়ে গেছে এখন আরে ফ্রি এমবি দেয়  না"
+        ],
+        "responses": "আমরা এই বিষয়টা দেখব।",
+        "context_set": ""
+    },
+    {
+        "tag": "query65",
+        "pattern": [
+            "Skitto apps e home screen Widgets option chai jate home screen e mb and taka always show kore. Skitto",
+            "স্কিটো অ্যাপ এ হোম স্ক্রিন ওইজেটস অপশন চাই যাতে হোম স্ক্র"
+        ],
+        "responses": "আমরা চেষ্টা করব।",
+        "context_set": ""
+    },
+    {
+        "tag": "query66",
+        "pattern": [
+            "Sim replacement charge eto beshi kno?",
+            "সিম রিপ্লেসমেন্ট চার্জ এত বেশি কেন"
+        ],
+        "responses": "আমরা দুঃখিত।",
+        "context_set": ""
+    },
+    {
+        "tag": "query67",
+        "pattern": [
+            "skitto sim এর ফ্রি রিপ্লেস মেন্ট এর সময় বাড়ানো হোক। আইন শৃঙ্খলা রক্ষা কারী বাহিনী বাইরে বের হতে দিচ্ছে না।",
+            "স্কিটো সিম এর ফ্রি রিপ্লেস মেন্ট এর সময় বাড়ানো হোক। আইন শৃঙ্খলা রক্ষা কারী বাহিনী বাইরে বের হতে দিচ্ছে না।",
+            "Skitto sim কেনার জন্যে এক মাস যাবৎ ময়মনসিংহের সবগুলো সেলস পয়েন্টে ঘুরছি৷ সবার একই উত্তর 'সরি ভাই, সীম নাই'! এমনকি জিপি সেন্টারেও একই কথা বলছে ! সীম কি তাহলে কালেকশান করতেই পারবো না!",
+            "স্কিটো সিম কেনার জন্যে এক মাস যাবৎ ময়মনসিংহের সবগুলো সেলস পয়েন্টে ঘুরছি৷ সবার একই উত্তর 'সরি ভাই, সীম নাই'! এমনকি জিপি সেন্টারেও একই কথা বলছে ! সীম কি তাহলে কালেকশান করতেই পারবো না!",
+            "skitto te unlimited data pack chi",
+            "স্কিটো সিম এ আনলিমিটেড ডাটা প্যাক চাই"
+        ],
+        "responses": "আমরা দেখছি কি করা যায়।",
+        "context_set": ""
+    },
+    {
+        "tag": "query68",
+        "pattern": [
+            "Skitto ta vlo kono offer diya hoi na Kno amr sim a.. sobay vlo vlo offer Pai amr tai asha na Kno",
+            "স্কিটো তে ভালো কোনো অফার দেয়া হয় না কেন আমার সিম এ। সবাই ভালো ভাল অফার পায় আমার টায় আসে না কেন?"
+        ],
+        "responses": "আমরা দেখছি বিষয়টা ।",
+        "context_set": ""
+    },
+    {
+        "tag": "query69",
+        "pattern": [
+            "skitto app diye reload kora jascana keno? pay online a to kono option e discanna. karon ta janaben plz..",
+            "স্কিটো অ্যাপ দিয়ে রিলোড করা যাচ্ছেনা কেন? পে অনলাইন এ তো কোন অপশনই দিচ্ছে না। কারণ টা জানাবেন প্লিজ",
+            "Skitto app ডাউনলোড করার পরে স্ক্রিনে আসছে যে \"looks like you are not logged into the correct facebook account\" যার জন্য অ্যাপটা ওপেন করতে পারছিনা,এর সল্যুশন কি?",
+            "স্কিটো অ্যাপ ডাউনলোড করার পরে স্ক্রিনে আসছে যে \"looks like you are not logged into the correct facebook account\" যার জন্য অ্যাপটা ওপেন করতে পারছিনা,এর সল্যুশন কি?",
+            "Skitto net cholchena keno? . Dinajpur e",
+            "স্কিটো নেট চলছেনা কেন? দিনাজপুর এ",
+            "Skitto sim a acseis point name Name ase..GP-INTARNET Apn ase..gpnet Ta hole Amar koronio ki network problem hosse to",
+            "স্কিটো সিম এ এক্সেস পয়েন্ট নেইম আছে। জিপি ইন্টারনেট এপিএন আছে। জিপি নেট তাহলে আমার করণীয় কি নেটওয়ার্ক সমস্যা হচ্ছে তো",
+            "Skitto sim a ato mb kate ki bolbo..1 gb gp r 1 gb skitto niye same vedio dekhale dekha jabe gp sim ar 500 mb jete na jetei skitto ses",
+            "স্কিটো সিম এ এত এমবি কাটে কি বলব, ১ জিবি জিপি আর ১ জিবি স্কিটো নিয়ে সেইম ভিডিও দেখালে দেখা যাবে জিপি সিম আর ৫০০ এমবি জেতে না জেতেই স্কিটো শেষ",
+            "Skitto sim dye ki wowbox snd my gp apps use kora jasse na kno?",
+            "স্কিটো সিম দিয়ে কি ওয়াওবক্স এবং মাই জিপি অ্যাপ ব্যবহার করা যাচ্ছে না কেন",
+            "Skitto sim kine ki miya bipode porchi,, kiser seba den apnara ,, net e pay na sobsmy h+ net ,, 4G aschei na",
+            "স্কিটো সিম কিনে কি মিয়া বিপদে পরেছি। কিসের সেবা দেন আপনারা। নেট ই পায় না সবসময় হ+ নেট। ৪জি আসছেই না",
+            "Skitto SIM network problem",
+            "স্কিটো সিম নেটওয়ার্ক সমস্যা",
+            "skitto SIM নেট স্পিড এত কম কেনো৷",
+            "স্কিটো সিম নেট স্পিড এত কম কেনো",
+            "Skitto ta net problem... Pubg khala jai nha",
+            "স্কিটো তে নেট সমস্যা। পাবজি খেলা যায় না",
+            "Skitto te extra data charge hoi kano I mean just fb te dhuke bar hoye aslei 30/50 mb data charge kore but why ?",
+            "স্কিটো তে অতিরিক্ত চার্জ হয় কেন মানে শুধু এফবি তে ঢুকে বের হয়ে আসলেই ৩০/৫০ এমবি চার্জ করে কিন্তু কেন?"
+        ],
+        "responses": "আমরা দেখছি বিষয়টা।",
+        "context_set": ""
+    },
+    {
+        "tag": "query70",
+        "pattern": [
+            "Skitto sim fb deya login korchilm akn fb nosto jowate skitto app a login kor jacha na akn ki vabe somadan kora jai.",
+            "স্কিটো সিম এফবি দিয়ে লগিন করেছিলাম এখন এফবি নস্ট যাওয়াতে স্কিটো অ্যাপ এ লগিন করা যাচ্ছে না। এখন কি ভাবে সমাধান করা যায়",
+            "Skitto to gp e onk taka kate. Per minutes e 2tk kore kat tese kn?",
+            "স্কিটো টু জিপি এ অনেক টাকা কাটে। প্রতি মিনিট এ ২ টাকা করে কাটছে কেন?"
+        ],
+        "responses": "আমরা দেখছি ব্যাপারটা।",
+        "context_set": ""
+    },
+    {
+        "tag": "query71",
+        "pattern": [
+            "skitto sim a amar akhane valo net pai na kno",
+            "স্কিটো সিম এ আমার এখানে বালো নেট পায় না কেন"
+        ],
+        "responses": "আমরা দেখব বিষয়টা।",
+        "context_set": ""
+    },
+    {
+        "tag": "query72",
+        "pattern": [
+            "sim kenar pore jodi app regi pore kori, tahole pore ki 2gb free data pabo",
+            "সিম কেনার পর যদি অ্যাপ রেজি পরে করি তাহলে পরে কি ২ জিবি ফ্রি ডাটা পাব?"
+        ],
+        "responses": "আমরা দেখে জানাচ্ছি।",
+        "context_set": ""
+    },
+    {
+        "tag": "query73",
+        "pattern": [
+            "Sim er melar sim ki vlo hbe....",
+            "সিম এর মেলার সিম কি ভালো হবে?"
+        ],
+        "responses": "আমরা না কেনার জন্য পরামর্শ দিব।",
+        "context_set": ""
+    },
+    {
+        "tag": "query74",
+        "pattern": [
+            "Skitto sim a net speed onek slow..... Why???",
+            "স্কিটো সিম এ নেট স্পিড অনেক স্লো। কেন?",
+            "Skitto Sim কিনতে গেছিলাম সার্ভিস পয়েন্টে , ২০০ টাকা দাম বলছে, বলে ১৫০টাকায় কেনা তাদের ৷ মেজাজ খ্রাপ হয়ে গেছে",
+            "স্কিটো সিম কিনতে গিয়েছিলাম সার্ভিস পয়েন্টে। ২০০ টাকা দাম বলছে। বলে ১৫০ টাকায় কেনা তাদের। মেজার খারাপ হয়ে গেছে",
+            "Skitto te net speed Onek Kom keno kal theke .kono online game kelte parsina hebby ping disse . please solve this problem",
+            "স্কিটো তে নেট স্পিড অনেক কম কেন কাল থেকে? কোন অনলাইন গেইম খেলতে পারছিনা । হেভি পিং দিচ্ছে। দয়া করে সমস্যা সমাধান করুন"
+        ],
+        "responses": "আমরা বিষয়টা দেখছি।",
+        "context_set": ""
+    },
+    {
+        "tag": "query75",
+        "pattern": [
+            "Skitto sim a fb masenger ta free dile students der subidha hobe pls",
+            "স্কিটো সিম এ এফবি মেসেঞ্জার টা ফ্রি দিলে শিক্ষার্থীদের সুবিধা হবে প্লিজ"
+        ],
+        "responses": "আমরা বিষয়টা দেখব।",
+        "context_set": ""
+    },
+    {
+        "tag": "query76",
+        "pattern": [
+            "Sir pubg এর জন্য আলাদা কোনো প্যাক রাখলে ভালো হয়।অনেকেই পাবজির জন্য রবি বা এয়ারটেল ব্যবহার করে কারন তাদের পাবজি প্যাক আছে",
+            "স্যার পাব্জি এর জন্য আলাদা কোনো প্যাক রাখলে ভালো হয়।অনেকেই পাবজির জন্য রবি বা এয়ারটেল ব্যবহার করে কারন তাদের পাবজি প্যাক আছে"
+        ],
+        "responses": "আমরা বিষয়টি অবশ্যই দেখব।",
+        "context_set": ""
+    },
+    {
+        "tag": "query77",
+        "pattern": [
+            "skitto use korar oviggota share koren plz amar kisu khon age 7 tk silo akhon 0 tk ase .et age o amon hoise kintu bujhte pari nai nj khoroch korsi mone korsilam kintu ajk bisoy ta kheal korlam.karo sim a ki amon ta hoy ?",
+            "স্কিটো ব্যবহার করার অভিজ্ঞতা শেয়ার করেন দয়া করে আমার কিছুক্ষণ আগে ৭ টাকা ছিল এখন ০ টাকা আছে। এর আগেও এমন হয়েছে কিন্তু বুঝতে পারিনি নিজে খরছ করেছি মনে করেছিলাম কিন্তু"
+        ],
+        "responses": "আমরা বিষয়টি দেখছি কি করা যায়।",
+        "context_set": ""
+    },
+    {
+        "tag": "query78",
+        "pattern": [
+            "Secret 10 Gb anchilam 85 taka diya but mb gula kaj kore na kno??",
+            "সিক্রেট ১০ জিবি এনেছিলাম ৮৫ টাকা দিয়ে কিন্তু এমবি গুলা কাজ করে না কেন",
+            "Secret deal কিনতে পারছি না। Boundle not allowed লেখা আসে কেন?",
+            "সিক্রেট ডিল কিনতে পার্ছি না। বান্ডল নট এলাউড লেখা আসে কেন",
+            "server off kno",
+            "সার্ভার অফ কেন?",
+            "Sir my gp sim 01756192527 ata hothat registration failed dekhay keno sir...??",
+            "স্যার মাই জিপি সিম এ 0175692527 হঠাত রেজিস্ট্রেশ্ন ফেইলড দেখায় কেন স্যার",
+            "Sir,.. Age ami 4g pakeg kintam my gp app theke akhon kinte parteci na..help me",
+            "স্যার আমি আগে ৪জি প্যাকেজ কিনলাম কিন্তু মাই জিপি অ্যাপ থকী এখন কিনতে পারছি না। সাহায্য করুন",
+            "Sir..amar skitto number aga call duration dekha jeto..but akhon jay na.. sir..call duration on korbo kivaba please aktu bolan...",
+            "স্যার। আমার স্কিটো নাম্বার আগে কল সময়সীমা দেখা যেত। কিন্তু এখন যায় না। স্যার, কল সময়সীমা অন করব কিভাবে প্লিজ একটু বলেন",
+            "skito Forum এ রেজিষ্ট্রেশন করতে পারতেছিনা।বারবার username ভুল দেখায়,লেখা আসে Uh- oh, this name is not available. Please chaos a new one.",
+            "স্কিটো ফোরাম এ রেজিষ্ট্রেশন করতে পারতেছিনা।বারবার username ভুল দেখায়,লেখা আসে Uh- oh, this name is not available. Please chaos a new one.",
+            "Skitti vai skittor Apps টা ফ্রি তে ব্যাবহার করার সুবিধে টা দেন মাঝে মাঝে জখন এম বি থাকে না। তখন টাকা রিচার্জ করার পর এম বি কিনতে গেলে টাক কাটে। এই প্রব্লেমটি খুব দ্রুত সমাধান চাই। আর না হই কোন ডায়াল নাম্বার দেন যেটি দিয়ে এম বি কিনা যাবে Skitto apps ছাড়া।",
+            "স্কিটোর অ্যাপ টা ফ্রি তে ব্যাবহার করার সুবিধে টা দেন মাঝে মাঝে জখন এম বি থাকে না। তখন টাকা রিচার্জ করার পর এম বি কিনতে গেলে টাক কাটে। এই প্রব্লেমটি খুব দ্রুত সমাধান চাই। আর না হই কোন ডায়াল নাম্বার দেন যেটি দিয়ে এম বি কিনা যাবে Skitto apps ছাড়া।",
+            "Skitto ..SIM e akhn MB kena jasse na kn.?",
+            "স্কিটো সিম এ এখন এমবি কেনা যাচ্ছে না কেন",
+            "skitto 5 Gb use e 48 poisha minutes Call Rate offer sob shomoi cai? 01316566323",
+            "স্কিটো ৫জিবি ব্যবহার এ ৪৮ পয়সা মিনিট কল রেট অফার সব সময় চাই। 01316566323",
+            "Skitto ami use kore but network very probleam",
+            "স্কিটো আমি ব্যবহার করি কিন্তু নেটওয়ার্ক এ অনেক সমস্যা",
+            "Skitto app e problem hosse tk, mb, dhekha, kina, aro onek problem hosse, goto rat theke",
+            "স্কিটো অ্যাপ এ সমস্যা হচ্ছে টাকা এমবি দেখা,কেনা আরও অনেক সমস্যা হচ্ছে গত রাত থেকে",
+            "skitto ar kaw চালাই না.... কোন offer ni ke চালাবে....",
+            "স্কিটো আর কেউ চালিও না।কোন অফার নাই কে চালাবে",
+            "skitto mama tomar mon a pach kom nai..age 2GB diye 39 takai meyad chilo 15 din...R akn 39 takai 1.5GB taw meyad 7 din...eta kintu thik na..",
+            "স্কিটো মামা তোমার মনে পেচ কম নাই আগে ২ জিবি দিয়ে ৩৯ টাকায় মেয়াদ ছিল ১৫ দিন। আর এখন ৩৯ টাকায় ১.৫ জিবি তাও মেয়াদ ৭ দিন এটা কিন্তু ঠিক না",
+            "Skitto Point Add Hoy na Keno ekhon?",
+            "স্কিটো পয়েন্ট যুক্ত হয় না কেন এখন?",
+            "Skitto sim deya kal thake Facebook R Messenger use korte parce na??????",
+            "স্কিটো সিম দিয়ে কাল থেকে ফেসবুক আর মেসেঞ্জার ব্যবহার করতে পারছি না?",
+            "Skitto sim e Roket apps er code ase na kno?",
+            "স্কিটো সিম এ রকেট অ্যাপ এর কোড আসে না কেন?",
+            "Skitto te furam sing korte parina Name dile bole ohh no! Its old nam try new na",
+            "স্কিটো তে ফোরাম সাইন করতে পারিনা নাম দিলে বলে ওহ নো! ইটস ওল্ড নেইম ট্রাই নিউ",
+            "skitto নতুন সিম কিনার পর প্রতি মাসে ১ জিবি করে তিন মাসে ৩ জিবি আসবে বলছিল কিন্তু কয় একমাস তো হয়ে গেলো কোন MB তো আসেনাই। নাকি আবার ১০ টাকা রির্চাজ করতে হবে।",
+            "স্কিটো নতুন সিম কেনার পর প্রতি মাসে ১ জিবি করে তিন মাসে ৩ জিবি আসবে বলছিল কিন্তু কয় একমাস তো হয়ে গেলো কোন MB তো আসেনাই। নাকি আবার ১০ টাকা রির্চাজ করতে হবে। "
+        ],
+        "responses": "আমরা বিষয়টি দেখছি।",
+        "context_set": ""
+    },
+    {
+        "tag": "query79",
+        "pattern": [
+            "Skitto apnader network speed kom kno erkm hole to onno sim use kora lagbe ekhane sob sim e network valo Sudhu skitto te e somossa na game khela jay r na video dejha jay thik moto",
+            "স্কিটো আপনাদের নেটওয়ার্ক স্পিড কম কেন এরকম হলে তো অন্য সিম ব্যবহার করা লাগবে এখানে সব সিম এ নেটওয়ার্ক ভালো শুধু স্কিটো তে ই সমস্যা না গেইম খেলা যায় না ভিডিও দেখা যায়",
+            "Skitto MB meyad nutun mb ar sathe add kora uchit.",
+            "স্কিটো এমবি মেয়াদ নতুন এমবি এর সাথে যুক্ত করা উচিত",
+            "Skitto sim a data kine babohar hoy na kn",
+            "স্কিটো সিম এ ডাটা কিনে ব্যবহার হয় না কেন",
+            "Skitto Sim a mb kinle use kora jai na kichu game khela jai na....",
+            "স্কিটো সিম এ এমবি কিনলে ব্যবহার করা যায় না কিছু গেম খেলা যায় না"
+        ],
+        "responses": "আমরা বিষয়টি দেখব।",
+        "context_set": ""
+    },
+    {
+        "tag": "query80",
+        "pattern": [
+            "Skitto use to a budget friendly internet SIM...but day by day it's breaking it's own promises",
+            "স্কিটো ব্যবহার তো বাজেট বন্ধুসুলভ ইন্টারনেট সিম। কিন্তু দিন দিন এটা নিজের প্রতিজ্ঞা ভংগ করছে"
+        ],
+        "responses": "আমরা বিষয়টি ভেবে দেখব।",
+        "context_set": ""
+    },
+    {
+        "tag": "query81",
+        "pattern": [
+            "skito sim কিনে অশান্তিতে আছি কোন দোকান থেকে রিচারজ করা যায়না",
+            "স্কিটো সিম কিনে অশান্তিতে আছি কোন দোকান থেকে রিচার্জ করা যায় না"
+        ],
+        "responses": "আমরা বিষয়টী দেখচি।",
+        "context_set": ""
+    },
+    {
+        "tag": "query82",
+        "pattern": [
+            "Secret deal ase na kn.....",
+            "সিক্রেট ডীল আসে না কেন",
+            "skitto te bikal taika net pawa jachhe na location habiganj zella baniyachong upozella.",
+            "স্কিটো তে বিকাল থেকে নেট পাওয়া যাচ্ছে না লোকেশন হবিগঞ্জ জিলা বানিয়াচং উপজেলা"
+        ],
+        "responses": "আমরা বিষয়টী দেখছি।",
+        "context_set": ""
+    },
+    {
+        "tag": "query83",
+        "pattern": [
+            "Skitto sim use korar o din ses. Faltu offer diye grahok rakha jabe na",
+            "স্কিটো সিম ব্যবহার করার ও দিন শেষ । ফালতু অফার দিয়ে গ্রাহক রাখা যাবে না"
+        ],
+        "responses": "আমরা বিষয়টী দেখব।",
+        "context_set": ""
+    },
+    {
+        "tag": "query84",
+        "pattern": [
+            "Skitto app kaj korsena, data kibabe active korbo?",
+            "স্কিটো অ্যাপ কাজ করছে না। ডাটা কিভাবে একটীভ করব"
+        ],
+        "responses": "আমরা ব্যপারটী দেখছি।",
+        "context_set": ""
+    },
+    {
+        "tag": "query85",
+        "pattern": [
+            "Sar ak saptaher offar kinar por 3 din bade sehs hoy keno",
+            "স্যার, এক সপ্তাহ অফার কেনার পর ৩ দিন বাদে শেষ হয় কেন",
+            "Skitto 2 Skitto প্রতি মাসে ১ জিবি পর্যন্ত ডাটা শেয়ার করা যায় কিন্তু এই মাসে আমি একবারো শেয়ার করি নাই তারপরেও Limit exceed দেখায় কেন???",
+            "স্কিটো টু স্কিটো প্রতি মাসে ১ জিবি পর্যন্ত ডাটা শেয়ার করা যায় কিন্তু এই মাসে আমি একবারো শেয়ার করি নাই তারপরেও লিমিট শেষ দেখায় কেন???"
+        ],
+        "responses": "আমরা ব্যাপারটি দেখছি।",
+        "context_set": ""
+    },
+    {
+        "tag": "query86",
+        "pattern": [
+            "Skitto sim a same package nile data or minutes er expired date barena kno???",
+            "স্কিটো সিম এ একই প্যাকেজ নিলে ডাটা অথবা মিনিট এর এক্সপায়ার্ড ডেইট বাড়েনা কেন?"
+        ],
+        "responses": "আমরা যথাসম্ভব এটি নিয়ে কাজ করব।",
+        "context_set": ""
+    },
+    {
+        "tag": "query87",
+        "pattern": [
+            "skitto sim er 7day facebook unlimited data pack chai.",
+            "স্কিটো সিম এর ৭ দিন ফেসবুক আনলিমিটেড ডাটা প্যাক চাই"
+        ],
+        "responses": "আমরা যথাসম্ভব চেষ্টা করব।",
+        "context_set": ""
+    },
+    {
+        "tag": "query88",
+        "pattern": [
+            "Skitto sim balo kono offer nai keno",
+            "স্কিটো সিম ভালো কোন অফার নাই কেন?"
+        ],
+        "responses": "আমরা শীঘ্রই আকর্ষণীয় অফার নিয়ে আসবো।",
+        "context_set": ""
+    },
+    {
+        "tag": "query89",
+        "pattern": [
+            "Sir, I have taka in grammen sim.But when i want to call some one.. I can't call. Please solve my issue as soon as possible. Thank you",
+            "স্যার, আমার গ্রামেন সিমে টাকা আছে। কিন্তু যখন আমি কাউকে কল করতে চাই.. আমি কল করতে পারি না। যত তাড়াতাড়ি সম্ভব আমার সমস্যা সমাধান করুন. ধন্যবাদ"
+        ],
+        "responses": "আমরা শীঘ্রই আপনার সমস্যা সমাধান করব।",
+        "context_set": ""
+    },
+    {
+        "tag": "query90",
+        "pattern": [
+            "Skitto Internet Problem keno?",
+            "স্কিটো ইন্টারনেট এ সমস্যা কেন"
+        ],
+        "responses": "আমরা শীঘ্রই ব্যবস্থা গ্রহণ করছি।",
+        "context_set": ""
+    },
+    {
+        "tag": "query91",
+        "pattern": [
+            "Skitto is not available in Rajshahi so sad",
+            "রাজশাহী তে স্কিটো নেই, দুঃখজনক"
+        ],
+        "responses": "আমরা শীঘ্রই ব্যবস্থা গ্রহণ করব।",
+        "context_set": ""
+    },
+    {
+        "tag": "query92",
+        "pattern": [
+            "Skitto sim er first series chalai amra.high price a kinechhi tahole offer valo paina kno?a concern of gp tahole network eto kharap kno j ekta city te boshe call drop hy please skitto j goal niye eshechhe oota thik rakhen pore amdr ask koren.otherwise we need to boycott our beloved skitto!!",
+            "স্কিটো সিম এর প্রথম সিরিজ চালাই আমরা। উচ্চমূল্যে কিনেছি তাহলে অফার ভালো পাইনা কেন? জিপি এর নেটওয়ার্ক তাহলে এত খারাপ কেন যে একটা শহরে বসে কল ড্রপ হয়"
+        ],
+        "responses": "আমরা শীঘ্রই যথাযথ ব্যবস্থা নিব।",
+        "context_set": ""
+    },
+    {
+        "tag": "query93",
+        "pattern": [
+            "Skitto network bashar vitor shudhu updown kore.Network kobe thik hobe.Address:-Home-Noya bari.shorbot tak road,zirani bazar,ashulia,savar,dhaka.",
+            "স্কিটো নেটওয়ার্ক বাসার ভিতর শুধু আপডাউন করে। নেটওয়ার্ক কবে ঠিক হবে ? ঠিকানাঃ বাসা-নয়া বাড়ি, শরবত টাক রোড, যিরানী বাজার, আশুলিয়া, সাভার, ঢাকা"
+        ],
+        "responses": "আমরা শীঘ্রই যোগাযোগ করব।",
+        "context_set": ""
+    },
+    {
+        "tag": "query94",
+        "pattern": [
+            "secret deals nai dui mash jabot",
+            "সিক্রেট ডিল নেই ২ মাস যাবত"
+        ],
+        "responses": "আমাদের অন্য অফার ব্যবহার করতে পারেন https://www.grameenphone.com/personal/plans-offers/offers",
+        "context_set": ""
+    },
+    {
+        "tag": "query95",
+        "pattern": [
+            "Sala kichu din age sundhor vabe kom dhame mb nichilam 95takay 10gb 1mash meyad...ekhon egula khujei pawa jayna",
+            "শালা কিছু দিন আগে সুন্দর ভাবে কম দামে এমবি নিয়েছিলাম ৯৫ টাকায় ১০ জিবি ১ মাস মেয়াদ। এখন এগুলা খুজেই পাওয়া যায় না"
+        ],
+        "responses": "আমাদের আগের অফার টি শেষ হয়ে গিয়েছে, বর্তমান অফার ১০ জিবি  ৩৫৯ টাকা মেয়াদ ১ মাস।",
+        "context_set": ""
+    },
+    {
+        "tag": "query96",
+        "pattern": [
+            "Sim price please....And is 2gb of tk39 offer is permanent pack???",
+            "সিম প্রাইস প্লিজ... আর ২জিবি ৩৯ টাকায় কি পারমানেন্ট প্যাক?"
+        ],
+        "responses": "আমাদের ওয়েবসাইট পরিদর্শন করুন।",
+        "context_set": ""
+    },
+    {
+        "tag": "query97",
+        "pattern": [
+            "Sim price and details bolen??",
+            "সিম প্রাইস আর বিস্তারিত বলবেন?"
+        ],
+        "responses": "আমাদের ওয়েবসাইট ভিজিট করুণ।",
+        "context_set": ""
+    },
+    {
+        "tag": "query98",
+        "pattern": [
+            "Sim ownership transfer cost pls",
+            " সিম মালিকানা স্থানান্তর খরচ প্লিজ",
+            "Sim tar sommonde bistarito janale vlo hoitw Skitto",
+            "সিম টার সম্বন্ধে বিস্তারিত জানালে ভালো হতো স্কিটো",
+            "Sir....minute pack ta bolyn...plzz",
+            "স্যার,মিনিট প্যাক টা বলেন। প্লিজ"
+        ],
+        "responses": "আমাদের ওয়েবসাইট ভিজিট করুন।",
+        "context_set": ""
+    },
+    {
+        "tag": "query99",
+        "pattern": [
+            "skitto use kora baad dichi. Sunday registration cancle korbo",
+            "স্কিটো ব্যবহার করা বাদ দিয়েছি। রবিবার রেজিস্ট্রেশন বাতিল করব"
+        ],
+        "responses": "আমাদের সাথে থাকার জন্য ধন্যবাদ।",
+        "context_set": ""
+    },
+    {
+        "tag": "query100",
+        "pattern": [
+            "Skitto sim ki gp net diye chole,naki skitto alada network ase?",
+            "স্কিটো সিম কি জিপি নেট দিয়ে চলে নাকি স্কিটো আলাদা নেটওয়ার্ক আছে?"
+        ],
+        "responses": "আলাদা।",
+        "context_set": ""
+    },
+    {
+        "tag": "query101",
+        "pattern": [
+            "skitto er service ato kharap j mone hoy 2g te asi.Kotha o bola jay na net ato baje",
+            "স্কিটো এর সার্ভিস এত খারাপ যে মনে হয় ২জি তে আছি। কথা ও বলা যায় না নেট আরো বাজে"
+        ],
+        "responses": "উক্ত সমস্যার জন্য আমরা দুঃখিত।",
+        "context_set": ""
+    },
+    {
+        "tag": "query102",
+        "pattern": [
+            "Skitto Sim e free Facebook dile valo hoto",
+            "স্কিটো সিম এ ফ্রি ফেসবুক দিলে ভালো হতো"
+        ],
+        "responses": "এই বিষয় নিয়ে আমরা কাজ করছি।",
+        "context_set": ""
+    },
+    {
+        "tag": "query103",
+        "pattern": [
+            "Skitto sim a dhukte parsi na kno??",
+            "স্কিটো সিম এ ঢুক্তে পারছি না কেন"
+        ],
+        "responses": "একটূ অপেক্ষা করুন।",
+        "context_set": ""
+    },
+    {
+        "tag": "query104",
+        "pattern": [
+            "skitto and gp prepaid offer much different. Why?",
+            "স্কিটো আর জিপি প্রিপেইড অফার অনেকটা আলাদা। কেন?"
+        ],
+        "responses": "এটা আমাদের পলিসি।",
+        "context_set": ""
+    },
+    {
+        "tag": "query105",
+        "pattern": [
+            "Skitto sim Grameen sim korbo kivabe",
+            "স্কিটো সিম গ্রামীন সিম করবো কিভাবে"
+        ],
+        "responses": "এটা করতে পারবেন না।",
+        "context_set": ""
+    },
+    {
+        "tag": "query106",
+        "pattern": [
+            "Skitto sim er call rate ato besi keno?",
+            "স্কিটো সিম এর কল রেট এত বেশী কেন?"
+        ],
+        "responses": "এটা যথার্থ রেট।",
+        "context_set": ""
+    },
+    {
+        "tag": "query107",
+        "pattern": [
+            "Skitto sim e app login hosse na nambar er purbe oto 88 jog hoye jasse.. Jemon,, 8801303694280.. Oi 88 kete dileo send korar somoy chole ase...",
+            "স্কিটো সিম এ অ্যাপ লগিন হচ্ছে না নাম্বার এর পুর্বে অটো ৮৮ যোগ হয়ে যাচ্ছে । যেমন 8801303694280. এই ৮৮ কেটে দিলেও সেন্ড করার সময় চলে আসে।"
+        ],
+        "responses": "এটা সমস্যা না। কিছুক্ষণ অপেক্ষা করুন ঠিক হয়ে যাবে।",
+        "context_set": ""
+    },
+    {
+        "tag": "query108",
+        "pattern": [
+            "Sir Grameenphone a 41৳ recharge korle ki data/minute pack chalu Hobe ?",
+            "স্যার গ্রামীনফোণ এ ৪১ টাকা রিচার্জ করলে কি ডাটা/মিনিট প্যাক চালু হবে?"
+        ],
+        "responses": "ওফারটির জন্য মাই জিপি অ্যাপ ভিজিট করুন।",
+        "context_set": ""
+    },
+    {
+        "tag": "query109",
+        "pattern": [
+            "siktto office ki bave phn dimo...plz bolo vai.......",
+            "স্কিটো অফিস কি ভাবে ফোন দিব,প্লিজ বলো ভাই"
+        ],
+        "responses": "ওয়েবসাইট এ কল দিন।",
+        "context_set": ""
+    },
+    {
+        "tag": "query110",
+        "pattern": [
+            "sim 4G replace korar por ki kuno offer available ace",
+            "সিম ৪জি রিপ্লেস করার পর কি কোন অফার আছে?"
+        ],
+        "responses": "ওয়েবসাইট ভিজিট করুণ।",
+        "context_set": ""
+    },
+    {
+        "tag": "query111",
+        "pattern": [
+            "Skitto bondho sim (4mas) a ki ki offer ache?",
+            "স্কিটো বন্ধ সিম (৪ মাস) কি কি অফার আছে"
+        ],
+        "responses": "ওয়েবসাইট ভিজিট করুন https://www.skitto.com/",
+        "context_set": ""
+    },
+    {
+        "tag": "query112",
+        "pattern": [
+            "sikkito sim e কি কি সরাসরি লোড দেওয়ায় যায়, অন্য সিমের মতন??? আর নতুন সিমে অফার কি কি???",
+            "স্কিটো সিম এ কি কি সরাসরি লোড দেওয়ায় যায়, অন্য সিমের মতন??? আর নতুন সিমে অফার কি ?",
+            "Sikkto sim replace koto?",
+            "স্কিটো সিম রিপ্লেস কত",
+            "silver grahokder jonno ki offer ase?",
+            "সিল্ভার গ্রাহক এর জন্য কি অফার আছে",
+            "Silver star ar subidha ki",
+            "্সিল্ভার স্টার এর সুবিধা কি",
+            "Sir .... Skitto simer internet kinbo sei code ti bolen",
+            "স্যার, স্কিটো সিম এর ইন্টারনেট কিনবো সেই কোডটি বলেন",
+            "Sir ami GP Gold star, amr jonno gp te ki ki offer ache!",
+            "স্যার আমি জিপি গোল্ড স্টার। আমার জন্য জিপি তে কি কি অফার আছে?",
+            "Skitoo from puron korbo kivabe",
+            "স্কিটো ফর্ম পূরণ করবো কিভাবে",
+            "skitti sim এর Mb শেয়ার করবো কেমনে প্লীজ কেউ বলেন",
+            "স্কিটো সিম এর এমবি শেয়ার করবো কেমনে প্লীজ কেউ বলেন",
+            "skitto App ব্যতিত আমি ব্যালেন্চ চেক বা মেগাবাইটের রিমেইনিং ব্যালেন্চ চেক করতে পারছি না। কোড গুলো কেউ শেয়ার করবেন প্লিজ?",
+            "স্কিটো অ্যাপ ব্যতিত আমি ব্যালেন্চ চেক বা মেগাবাইটের রিমেইনিং ব্যালেন্চ চেক করতে পারছি না। কোড গুলো কেউ শেয়ার করবেন প্লিজ?",
+            "Skitto bisbut এর কাজ কী একটু বলবেন",
+            "স্কিটো বিসবুট এর কাজ কী একটু বলবেন?"
+        ],
+        "responses": "ওয়েবসাইট ভিজিট করুন।",
+        "context_set": ""
+    },
+    {
+        "tag": "query113",
+        "pattern": [
+            "Sim 3gb thake 4gb korle ki kono offer ase? Please bolben? And first comment.",
+            "সিম ৩জি থেকে ৪ জি করলে কি কোন অফার আছে? প্লিজ বলবেন?"
+        ],
+        "responses": "ওয়েবসাইট ভিজিত করুন।",
+        "context_set": ""
+    },
+    {
+        "tag": "query114",
+        "pattern": [
+            "Sim Card Kinte Ki NID er Copy Lagbe Naki NID Dakhalei Hobe??",
+            "সিম কার্ড কিনলে কি এন আই ডি এর কপি লাগবে নাকি এন আই ডি দেখাইলেই হবে?"
+        ],
+        "responses": "কপি লাগবে।",
+        "context_set": ""
+    },
+    {
+        "tag": "query115",
+        "pattern": [
+            "sir amar 01777607331 Ai numbr theke kenw kal k rate theke sms sent hosce na plz help me",
+            "স্যার আমার 01777607331 এই নাম্বার থেকে কেন কালকে রাত থেকে এসএমএস সেন্ট হচ্ছে না দয়া করে সাহায্য করুন"
+        ],
+        "responses": "কল ১২।",
+        "context_set": ""
+    },
+    {
+        "tag": "query116",
+        "pattern": [
+            "Skitto te mb check dey kemne...???",
+            "স্কিটো তে এমবি চেক দেয় কিভাবে?"
+        ],
+        "responses": "কল ১২১ ।",
+        "context_set": ""
+    },
+    {
+        "tag": "query117",
+        "pattern": [
+            "Silver star hole 2g sim 4g ki free replace koro jabe",
+            "সিল্ভার স্টার হলে ২জি সিম ৪জি কি ফ্রি রিপ্লেইস করা যাবে",
+            "Silver গ্রাহক ফ্রী সিম রিপ্লেসমেন্ট করতে পারবে?",
+            "্সিল্ভার গ্রাহক ফ্রী সিম রিপ্লেসমেন্ট করতে পারবে?",
+            "Sim 4G কিভাবে করবো?",
+            "্সিম ৪জি কিভাবে করবো",
+            "Sim 4G কেমনে করব??",
+            "সিম ৪জি কিভাবে করবো",
+            "Sim a mb offer ase bt Dial korle Hocce nh prb ki hoice bujteci nh",
+            "সিম এ এমবি অফার আছে তবে ডায়াল করলে হচ্ছে না প্রব্লেম কি হচ্ছে বুঝছি না",
+            "Sim a net passe na valo",
+            "সিম এ নেট পাচ্ছে না ভালো",
+            "Sim ar malikana paltate chai.....ki ki lagbe??",
+            "সিম এর মালিকানা পাল্টাতে চাই ।কি কি লাগবে",
+            "Sim call ret koto",
+            "সিম কল রেট কত",
+            "Sim card registered করা আছে কোন NID দিয়ে তা দেখবো কিভাবে",
+            "সিম কার্ড রেজিস্টার করা আছে কিনা কোন এন আই ডি দিয়ে তা দেখবো কিভাবে",
+            "Sim chalu korar somoy number dissi....pore log in to Facebook disse kn",
+            "সিম চালু করার সময় নাম্বার দিচ্ছি পরে লগ ইন ফেসবুক দিচ্ছে কেন",
+            "Sim er 39 tk I 2 gb er offer ta amak diteche na keno",
+            "সিম এর ৩৯ টাকা ২ জিবি অফার টা আমাকে দিচ্ছে না কেন",
+            "Sim er tk kete niye jay bondho korbo kivabe",
+            "সিম এর টাকা কেটে নিয়ে যায় বন্ধ করব কিভাবে",
+            "SIM majh moddhe kore natok mb thakteo net chole na",
+            "সিম মাঝে মধ্যে করে নাটক এমবি থাকতেও নেট চলে না",
+            "Sim not provisioned dakhascy kno",
+            "সিম নট প্রভিশিনড দেখাচ্ছে কেন",
+            "Sim r balance othoba mb transfer kore kivabe??Janle iktu plz janabn",
+            "সিম এর ব্যালেন্স অথবা এমবি ট্রান্সফার করে কিভাবে? জানলে একটু প্লিজ জানাবেন",
+            "Sim registration ace kina kivabe dekbo....????",
+            "সিম রেজিস্ট্রেশন আছে কিনা কিভাবে দেখবো",
+            "sim registration batil kora jabei",
+            "সিম রেজিস্ট্রেশন বাতিল করা যাবে?",
+            "Sime shokol service bondo korbo ki vabe",
+            "সিম এ সকল সার্ভিস বন্ধ করব কিভাবে",
+            "Sime taka vorley taka kete ney Sokol service of korbo ki vabe",
+            "সিম এ টাকা ভরলেই টাকা কেটে নেয়। সকল সার্ভিস অফ করবো কিভাবে",
+            "Sir ami loan nitaey cai",
+            "স্যার আমি লোন নিতে চাই",
+            "Sir e sim ki ki pakeg ase",
+            "স্যার এ সিম কি কি প্যাকেজ আছে",
+            "Sir Gpay repar korle koto taka pabo janaben",
+            "স্যার জিপে রেফার করলে কত টাকা পাবো জানাবেন",
+            "Sitto simer SMS kiner Code kotho...?",
+            "স্কিটো সিমের এসএমএস কেনার কোড কত",
+            "sitto তে মিনিট কেনা যায় কিভাবে???প্লীজ বলবেন....",
+            "স্কিটো তে মিনিট কেনা যায় কিভাবে",
+            "Skitto app থেকে কিভাবে এমবি কিনতে হয়? সিমের account ব্যালান্স থেকে কি এমবি কিনার অপশন রাখেন নাই? আমি তো পাচ্ছি না বলে,ডাটা কিনতে পারছি না",
+            "স্কিটো অ্যাপ থেকে কিভাবে এমবি কিনতে হয়? সিমের একাউন্ট ব্যালান্স থেকে কি এমবি কিনার অপশন রাখেন নাই? আমি তো পাচ্ছি না বলে,ডাটা কিনতে পারছি না"
+        ],
+        "responses": "কল ১২১।",
+        "context_set": ""
+    },
+    {
+        "tag": "query118",
+        "pattern": [
+            "silver star howar jonno ki 428 tk reacharge korte hove naki, details boln",
+            "সিল্ভার স্টার হওয়ার জন্য কি ৪২৮ টাকা রিচার্জ করতে হবে নাকি ডিটেইলস বলেন",
+            "Sim er offer bolen",
+            "সিম এর অফার বলেন"
+        ],
+        "responses": "কল১২১।",
+        "context_set": ""
+    },
+    {
+        "tag": "query119",
+        "pattern": [
+            "skitto sim theke phone jaina",
+            "স্কিটো সিম থেকে ফোন যায়না"
+        ],
+        "responses": "কাস্টমার কেয়ার এ যোগাযোগ করু।",
+        "context_set": ""
+    },
+    {
+        "tag": "query120",
+        "pattern": [
+            "Skitto Kinte Cassi Kintu Sim Passi na.. Ki Korte pari?",
+            "স্কিটো কিনতে চাচ্ছি কিন্তু পাচ্ছি না কি করতে পারি?",
+            "Skitto sim bondo hoia galo kano",
+            "স্কিটো সিম বন্ধ হয়ে গেল কেন",
+            "skitto Sim নিয়েছি দুইটা। সার্ভিস ভালোই দিচ্ছিলো বাট হঠাত করে সিম ৬-৭ দিনের ব্যাবধানে দুইটা সিমই প্রথমে remove দেখালো এবং তারপর থেকে No service হয়ে আছে। এর কারণ কি..?",
+            "স্কিটো সিম  নিয়েছি দুইটা। সার্ভিস ভালোই দিচ্ছিলো বাট হঠাত করে সিম ৬-৭ দিনের ব্যাবধানে দুইটা সিমই প্রথমে রিমুভ দেখালো এবং তারপর থেকে নো সার্ভিস হয়ে আছে। এর কারণ কি..?",
+            "Skitto sim যে NID দিয়ে ভুলে গেছি কোন NID দিয়ে কেনা সেটা কিভাবে বের করবো",
+            "স্কিটো সিম যে এনআইডি দিয়ে ভুলে গেচি কোন এন আইডী দিয়ে কেনা সেটা কিভাবে বের করব",
+            "Skitto Sim হারিয়ে গেলে সিম তুলবো কিভাবে?",
+            "স্কিটো সিম হারিয়ে গেলে সিম তুলব কিভাবে?"
+        ],
+        "responses": "কাস্টমার কেয়ার এ যোগাযোগ করুন।",
+        "context_set": ""
+    },
+    {
+        "tag": "query121",
+        "pattern": [
+            "Skitto sim জিপি apps সে লগইন হয়েগেছে,,,,এখন আর লগআউট হচ্ছে না,,, ডাটা ক্লেয়ার দিলেও অটো লগইন হয়ে যায়,,,, কি করতে পারি",
+            "স্কিটো সিম জিপি অ্যাপ সে লগইন হয়েগেছে,,,, এখন আর লগআউট হচ্ছে না,,, ডাটা ক্লেয়ার দিলেও অটো লগইন হয়ে যায়,,,, কি করতে পারি"
+        ],
+        "responses": "কাস্টমার কেয়ারে কথা বলুন।",
+        "context_set": ""
+    },
+    {
+        "tag": "query122",
+        "pattern": [
+            "Sim a puk code bosche akhon somadhan ki r sim ar card ta haray gece",
+            "সিম এ পাক কোড বসছে এখন সমাধান কি আর সিম এর কার্ড টা হারিয়ে গিয়েছে,"
+        ],
+        "responses": "কাস্টমার কেয়ারে যান।",
+        "context_set": ""
+    },
+    {
+        "tag": "query123",
+        "pattern": [
+            "skitto sim haray gese...akhn sim ta tulbo koi theke...??",
+            "স্কীটো সিম হারিয়ে গেছে। এখন সিম টা তুলবো কই থেকে",
+            "Skitto sim haraya gese, Akon tulbo kibabe??? Mymensing",
+            "স্কিটো সিম হারিয়ে গিয়েছে। এখন তুলবো কিভাবে> ময়মনসিঙ্হ",
+            "Skitto SIM hariya gale ki tola jai ar koto taka lage",
+            "স্কিটো সিম হারিয়ে গেলে কি তোলা যায়? আর কত টাকা লাগে?",
+            "skitto sim home delivery possible? website e kothaw khuje pacchi na!",
+            "স্কিটো সিম হোম ডেলিভারি সম্ভব?ওয়েবসাইট এ কোথাও খুজে পাচ্ছি না",
+            "Skitto sim kothy pabo.. 200tk diye",
+            "স্কিটো সিম কোথায় পাব? ২০০ টাকা দিয়ে",
+            "Skitto sim open korlam apps a number o dilam. But code chacha amaka to kono code dai nai ?",
+            "স্কিটো সিম ওপেন করলাম অ্যাপ এ নাম্বার ও দিলাম কিন্তু কোড চাচ্ছে আমাকে তো কোন কোড দেই নি",
+            "Skitto sim replesment korte koto taka khoroc hobe...",
+            "স্কিটো সিম পরিবর্তন করতে কত টাকা খরচ হবে?",
+            "Skitto te ki volte chalu hoise??? Hole amar phone on holo na kano?? But gp sim a volte chalu hoise amar sim a..",
+            "স্কিটো তে কি ভোল্ট চালু হয়েছে? হলে আমার ফোন অন হলো না কেন? কিন্তু জিপি সিম এ ভোল্ট চালু হয়েছে আমার সিম এ"
+        ],
+        "responses": "কাস্টমার কেয়ারে যোগাযোগ করুন।",
+        "context_set": ""
+    },
+    {
+        "tag": "query124",
+        "pattern": [
+            "Skitto ta facebook login দিতে বলে দিলে হয় না",
+            "স্কিটো তে ফেসবুক লগিন দিতে বলে দিলে হয় না"
+        ],
+        "responses": "কিছুক্ষণ অপেক্ষা করুণ।",
+        "context_set": ""
+    },
+    {
+        "tag": "query125",
+        "pattern": [
+            "skitpoints দিয়ে এমবি কিনতে পারছি না কাল থেকেই,,,শুধুই সার্ভার সমস্যার কথা বলছে। এখন কি করতে পারি?",
+            "স্কিটো দিয়ে এমবি কিনতে পারছি না কাল থেকেই,,,শুধুই সার্ভার সমস্যার কথা বলছে। এখন কি করতে পারি?",
+            "Skitto app e login korte parchi na",
+            "স্কিটো অ্যাপ এ লগিন করতে পারছি না",
+            "Skitto App e onek din dhore dhukte parci na... eta kano hosse??",
+            "স্কিটো অ্যাপ এ অনেক দিন ধরে ঢুক্তে পারছি না। এটা কেনো হচ্ছে ?",
+            "Skitto app ee dhoka jasse na kno ?",
+            "স্কিটো অ্যাপ এ ঢোকা যাচ্ছে না কেন",
+            "Skitto app er server ki thik hoise?",
+            "স্কিটো অ্যাপ এর সার্ভার কি ঠিক হয়েছে?",
+            "Skitto app er service eto poor Kno?",
+            "স্কিটো অ্যাপ এর সার্ভার এত বাজে কেন?",
+            "Skitto app install korar pore Number chawar pore skitto Numbe dilam ...Ekhn lekha ashtese,\"plz contact MIC' Mic eta ki??? Kibhabe contact korbo???",
+            "স্কিটো অ্যাপ ইন্সটল করার পরে নাম্বার চাওয়ার পরে স্কিটো নাম্বার দিলাম এখন লেখা আসছে প্লিজ আম আই সি এর সাথে যোগাযোগ করুন।এম আই সি এটা কি ? কিভাবে যোগাযোগ করব",
+            "skitto app open hoi na..",
+            "স্কিটো অ্যাপ ওপেন হয় না",
+            "skitto app open korle kono kaj mofa jacche na kano?",
+            "স্কিটো অ্যাপ ওপেন করলে কোন কাজ মোছা যাচ্ছে না কেন",
+            "Skitto app or ussd konota diye e internet mb er date dekha jacce na goto kal theke. App uninstall kore reinstall oorci tarpor o thik hoy na keno??",
+            "স্কিটো অ্যাপ এর ইউ এস এস ডি কোনোটা দিয়ে ই ইন্টারনেট এমবি এর ডেইট দেখা যাচ্ছে না গত কাল থেকে অ্যাপ আনইন্সটল করে রি ইন্সটল অ করেছি। তারপর ও ঠিক হয় না কেন",
+            "Skitto app reg. করতে পারছিনা কনফার্ম কোড আসছে না। এখন আমি কি করবো..?",
+            "স্কিটো অ্যাপ রেজি। করতে পারছিনা কনফার্ম কোড আসছে না। এখন আমি কি করবো..?",
+            "skitto app ta etto prblm korse kno? bar bar log in korte hosse. khub baje keta obostha cholse app a",
+            "স্কিটো অ্যাপ টা এত সমস্যা করছে কেন? বার বার লগ ইন করতে হচ্ছে। খুব বাজে একটা অবস্থা চলছে অ্যাপ এ",
+            "skitto app ta open hoyna kno",
+            "স্কিটো অ্যাপ টা ওপেন হয় না কেন",
+            "Skitto app ta te kisu show korse na kno( tk mb kisui app diye kno dekhte parci na)",
+            "স্কিটো অ্যাপ টা তে কিছু শো করছে না কেন (টাকা এমবি কিছুই অ্যাপ দিয়ে কেন দেখতে পারছি না)",
+            "Skitto app theke Reload Duch bangla card er maddhome kora jeto...but kal theke R ei option ta pacchi na kno? Kindly janaben",
+            "স্কিটো অ্যাপ থেকে রিলোড ডাচ বাংলা ব্যাংক এর কার্ড এর মাধ্যমে করা যেত। কিন্তু কাল থেকে আর এই অপশন টা পাচ্ছি না কেন? দয়া করে জানাবেন",
+            "skitto app update দেওয়ার পর থেকে আর চালু হয় না কেন??",
+            "স্কিটো অ্যাপ আপডেট দেয়ার পর থেকে আর চালু হয় না কেন?",
+            "Skitto app এ forget password এ ক্লিক করলে Code Massage আসেই না কেন?",
+            "স্কিটো অ্যাপ এ ফরগেট পাসওয়ার্ড এ ক্লিক করলে কোড মেসেজ আসেই না কেন?",
+            "skitto app চলছে না একদম,",
+            "স্কিটো অ্যাপ চলছে না একদম",
+            "Skitto App থেকে এমবি কিনবো কিভাবে? স্ক্রিনশট দিলে ভাল হয় এবং এর অফার কিভাবে buy করব? প্লিজ জানান",
+            "স্কিটো অ্যাপ থেকে এমবি কিনবো কিভাবে? স্ক্রিনশট দিলে ভাল হয় এবং এর অফার কিভাবে কিনব? প্লিজ জানান",
+            "Skitto app's doesn't open. Only show loading.",
+            "স্কিটো অ্যাপ ওপেন হচ্ছে না। শুধু লোডিং দেখাচ্ছে",
+            "Skitto apps a hotat kore login hocchena, kahini ki?",
+            "স্কিটো অ্যাপ এ হঠাত করে লগিন হচ্ছেনা, কাহিনী কি",
+            "Skitto apps diye fb pack kinsi, kintu oi data diya ta akhon fb te picture show kore na?",
+            "স্কিটো অ্যাপ দিয়ে এফ বি প্যাক কিনেছি। কিন্তু ঐ ডাটা দিয়ে তা এখন এফবি  তে ছবি শো করে না?",
+            "Skitto apps e dhukte parchi na kno ?????",
+            "স্কিটো অ্যাপ এ ঢুকতে পারছি না কেন?",
+            "skitto apps e dokte perci na flaxi o jacce nah...kno??",
+            "স্কিটো অ্যাপ এ ঢুক্তে পারছি না ফ্লেক্সি ও যাচ্ছে না। কেন?",
+            "skitto apps on korte parcina kno??",
+            "স্কিটো অ্যাপ অন করতে পারছি না কেন?",
+            "Skitto Apps open hocce na keno vai..",
+            "স্কিটো অ্যাপ ওপেন হচ্ছে না কেন ভাই",
+            "skitto apps open hossa na kano",
+            "স্কিটো অ্যাপ ওপেন হচ্ছে না কেন",
+            "Skitto apps open hosse na",
+            "স্কিটো অ্যাপ ওপেন হচ্ছে না",
+            "Skitto apps open hoy na.....khali connecting hoy...",
+            "স্কিটো অ্যাপ ওপেন হয় না। খালি কানেক্টিং হয়",
+            "Skitto apps open korte pari naa. 6 okkhor password chai... Password dile o hoi naa. Ki korbo hlp?",
+            "স্কিটো অ্যাপ ওপেন করতে পারি না ৬ অঙ্কের পাসওয়ার্ড চায়। পাসওয়ার্ড দিলে ও হয় না। কি করব?",
+            "skitto apps কাজ হচ্ছে না কেন? skitto apps আপডেট করার পরে সমস্যা হচ্ছে কেন? ঢোকা যচ্ছে না।",
+            "স্কিটো কাজ হচ্ছে না কেন? স্কিটো অ্যাপ আপডেট করার পরে সমস্যা হচ্ছে কেন? ঢোকা যচ্ছে না।",
+            "skitto apps- এ প্রবেশ করতে পারছি না কেন? বারবার নাম্বার দিতে বলছে অার সঠিক নাম্বার দিলেও ভুল নাম্বার দেখাচ্ছে কেন? আমি একজন পুরাতন গ্রাহক এর সমাধান চাই।।",
+            "স্কিটো অ্যাপ এ প্রবেশ করতে পারছি না কেন? বারবার নাম্বার দিতে বলছে অার সঠিক নাম্বার দিলেও ভুল নাম্বার দেখাচ্ছে কেন? অামি একজন পুরাতন গ্রাহক এর সমাধান চাই।।",
+            "Skitto balance share kora jacce na kano?",
+            "স্কিটো ব্যালেন্স শেয়ার করা যাচ্ছে না কেন",
+            "Skitto coin jog hoi na kno",
+            "স্কিটো কয়েন যোগ হয় না কেন",
+            "Skitto data on hosse na kan??",
+            "স্কিটো ডাটা চালু হচ্ছে না কেন",
+            "skitto internet problem rigtnow????????",
+            "এখন স্কিটো তে ইন্টারনেট সমস্যা আছে?",
+            "Skitto Internet speed onek slow... Gaming khela jacche na problem ki?",
+            "স্কিটো ইন্টারনেট স্পিড অনেক স্লো। গেমিং খেলা যাচ্ছে না সমস্যা কি",
+            "Skitto sim a data on korar por network ase kintu kono kicu open hoy na",
+            "স্কিটো সিম এ ডাটা অন করার পর নেটওয়ার্ক আসে কিন্তু কোন কিছু ওপেন হয় না",
+            "Skitto sim ar data on hosse na keno",
+            "স্কিটো সিম এর ডাটা অন হচ্ছে না কেন",
+            "Skitto sim online order kora jayna keno Chittagong theke",
+            "স্কিটো সিম অনলাইন এ অর্ডার করা যায় না কেন চট্টগ্রাম থেকে",
+            "skitto sim order korlam 30 april akhon porjonto sim ashar kono khobor nei,Customer care e phone diye bolar porew kono bebostha newa hoi nai eirokom service mene newa jai na",
+            "স্কিটো সিম অর্ডার করলাম ৩০ এপ্রিল এখন পর্যন্ত সিম আসার খবর নেই। কাস্টমার কেয়ার এ ফোন দিয়ে বলার পরেও কোন ব্যবস্থা নেয়া হয়নি এরকম সার্ভিস",
+            "Skitto te bKash diye recharge hocche na keno",
+            "স্কিটো তে বিকাশ দিয়ে রিচার্জ হচ্ছে না কেন",
+            "Skitto te Menite kina jay na kno? SMS cheak kora jacche na kno?",
+            "স্কিটো তে মিনিট কেনা যায় না কেন? এসএমএস চেক করা যাচ্ছেনা কেন?",
+            "Skitto te server a problem hocche...net chalaite parci na.",
+            "স্কিটো তে সার্ভার সমস্যা হচ্ছে। নেট চালাতে পারছি না",
+            "Skitto te speed ato slow kn...b.m college area e(professor goli)",
+            "স্কিটো তে স্পিড এত ধীর কেন? বি এম কলেজ এলাকা(প্রফেসর গলি)",
+            "Skitto teke internet o call kicuy jayna keno??",
+            "স্কিটো থেকে ইন্টারনেট ও কল কিছুই যায় না কেন?",
+            "skitto theke sms jay na keno ektu bolben. onek try korlam kinto jacche nah.",
+            "স্কিটো থেকে এসএমএস যায় না কেন একটু বলবেন? অনেক চেষ্টা করলাম কিন্তু যাচ্ছে না"
+        ],
+        "responses": "কিছুক্ষণ অপেক্ষা করুন।",
+        "context_set": ""
+    }
+    
+  ]
+}   

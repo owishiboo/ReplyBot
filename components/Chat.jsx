@@ -104,13 +104,13 @@ const Chat = () => {
         console.log(error.response.headers)
         }
     })}
-
+    
     async function getSearchList(){
       const { pid } = router.query
-      let data = {
+      const list = {
         email:pid
       }
-      axios.post("/api/getSearch",data).then((response)=>{
+      await axios.post("/api/getSearch",list).then((response)=>{
         console.log(response.data.queries);
         setSearchItems(response.data.queries);
         setInputBar(response.data.queries);
@@ -164,6 +164,7 @@ const Chat = () => {
     setMessages(newMessages);
     getData(text);
     searchList(text);
+    getSearchList();
   };
 
   
@@ -185,7 +186,7 @@ const Chat = () => {
                     inputBar.map((item)=>(
                     <Box sx={{marginBottom:'6px',marginLeft:'20px'}}>  
                     <Grid container marginBottom={30} spacing={2} sx={{ alignItems: "center", mx:"auto", marginBottom:"30px"}}> 
-                    <Grid><ContentPasteGoIcon sx={{ color:'#607D8B'}}/></Grid>
+                    {/* <Grid><ContentPasteGoIcon sx={{ color:'#607D8B'}}/></Grid> */}
                     <Grid>  
                     <Typography>{item.body}</Typography>
                     </Grid>
@@ -211,25 +212,15 @@ const Chat = () => {
         }
         </Grid> 
         <Grid item sx={10}>
-        {banglishwords?(
-        //   <Card sx={{ minHeight: 50 }}>
-        //   <Typography variant="h5" component="div">
-        //     Banglish words:{banglishwords}
-        //   </Typography>
-        // </Card>
+        {/* {banglishwords?(
+       
         <Chip label={"Banglish words: "+banglishwords} color="primary" />
         ):
       (
           <div></div>
       )
-        }
-        {/* <Chip label={getUser()} color="primary"/> */}
+        } */}
       </Grid>  
-      {/* <Card>
-          <Typography variant="h5" component="div">
-            {percentage}% Banglish
-          </Typography>
-        </Card> */}   
         </Grid>
       </div>  
   );

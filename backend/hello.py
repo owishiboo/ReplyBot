@@ -104,7 +104,7 @@ def response(sentence, userID='123', show_details=False):
                 if i['tag'] == results[0][0]:
                     # Random Response from High Order Probabilities
                     print("this is random"+random.choice(i['responses']))
-                    return str(random.choice(i['responses']))
+                    return str(i['responses'])
 
             results.pop(0)
     else:return "we have no answer"            
