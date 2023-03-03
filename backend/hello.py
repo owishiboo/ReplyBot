@@ -136,9 +136,10 @@ def CheckWord(word,numbers):
     print(word)
     return 1   
 
-def CheckWordBang(word):
+def CheckWordBang(word,bangla):
     found = bool(regex.fullmatch(r'\P{L}*\p{Bengali}+(?:\P{L}+\p{Bengali}+)*\P{L}*', word)) 
     if(found):
+        bangla.append(word);
         return 1
     else:
         return 0
@@ -154,9 +155,10 @@ def detect_banglish(text):
     bn=0
     x = txt.split()
     numbers=[]
+    bangla=[]
     for i in range(len(x)):
     #print(x[i])
-        inc = CheckWordBang(x[i])
+        inc = CheckWordBang(x[i],bangla)
         
         if(inc==1):
             bn = bn + inc
@@ -165,7 +167,7 @@ def detect_banglish(text):
             
     ct1 = bnen/len(x)*100   
     ct2 = bn/len(x)*100
-    return {"words": json.dumps(numbers, ensure_ascii=False), "ratio1":ct1, "ratio2":ct2}
+    return {"words": json.dumps(numbers, ensure_ascii=False), "bangla": json.dumps(bangla,ensure_ascii=False), "ratio1":ct1, "ratio2":ct2}
 
 # Run the app
 if __name__ == '__main__':

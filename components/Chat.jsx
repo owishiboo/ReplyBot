@@ -56,7 +56,9 @@ const Chat = () => {
   const [searchItems, setSearchItems] = useState([]);
   const [inputBar, setInputBar] = useState([]);
   const [replyMessage, setReplyMessage] = useState(null);
-  const [banglishwords, setBanglishWords] = useState(null);
+  const [banglishwords, setBanglishWords] = useState([]);
+  const [banglawords,setBanglaWords]=useState([]);
+  const [banglapercentage,setBanglaPercentate]=useState(null);
   const [percentage, setPercentage] = useState(null);
   const arr = [];
   const [id, setId] = useState(null);
@@ -113,6 +115,8 @@ const Chat = () => {
         console.log(response.data.words);
         setBanglishWords(res.words);
         setPercentage(res.ratio1);
+        setBanglaWords(res.bangla);
+        setBanglaPercentate(res.ratio2);
         console.log({rat2: res.ratio2})
       })
       .catch((error) => {
@@ -249,9 +253,23 @@ const Chat = () => {
             <div></div>
           )}
         </Grid>
-        <Grid item sx={10}>
-          {banglishwords ? (
+        <Grid item sx={2}>
+          {banglapercentage ? (
+            <Chip label={banglapercentage + '% Bangla'} />
+          ) : (
+            <div></div>
+          )}
+        </Grid>
+        <Grid item sx={2}>
+          {(percentage>0) ? (
             <Chip label={'Banglish words: ' + banglishwords} color="primary" />
+          ) : (
+            <div></div>
+          )}
+        </Grid>
+        <Grid item sx={2}>
+          {(banglapercentage>0)>0 ? (
+            <Chip label={'Bangla words: ' + banglawords} color="primary" />
           ) : (
             <div></div>
           )}
