@@ -77,7 +77,7 @@ const Chat = () => {
       .then((response) => {
         console.log(response.data.queries);
         setSearchItems(response.data.queries);
-        setInputBar(response.data.queries);
+        setInputBar(response.data.queries.slice(-20));
       })
       .catch((error) => {
         console.log(error);
@@ -99,7 +99,7 @@ const Chat = () => {
       });
       setInputBar(newSearchList);
     } else {
-      setInputBar(searchItems);
+      setInputBar(searchItems.slice(-20));
     }
   };
   const getSearchTerm = () => {
@@ -177,8 +177,12 @@ const Chat = () => {
     }
     loadWelcomeMessage();
     setId(router.query);
-    //getSearchList();
+    getSearchList();
   }, []);
+
+  async function getAutoReply(text){
+    setMessages(text);
+  };
 
   const send = async (text) => {
     const newMessages = messages.concat(
@@ -245,6 +249,7 @@ const Chat = () => {
           </Grid>
         </Grid>
       </div>
+      <Box sx={{ alignContent:'center',alignItems:'center',mx:'auto'}}>
       <Grid container spacing={2} sx={{ alignItems: 'center', mx: 'auto' }}>
         <Grid item sx={2}>
           {percentage ? (
@@ -275,6 +280,7 @@ const Chat = () => {
           )}
         </Grid>
       </Grid>
+      </Box>
     </div>
   );
 };
