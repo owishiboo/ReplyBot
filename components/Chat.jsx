@@ -180,7 +180,7 @@ const Chat = () => {
     getSearchList();
   }, []);
 
-  
+
 
   const send = async (text) => {
     const newMessages = messages.concat(
@@ -229,7 +229,7 @@ const Chat = () => {
                     >
                       {/* <Grid><ContentPasteGoIcon sx={{ color:'#607D8B'}}/></Grid> */}
                       <Grid>
-                        <Typography>{item.body}</Typography>
+                        <Typography onClick={() => {navigator.clipboard.writeText(item.body)}}>{item.body}</Typography>
                       </Grid>
                     </Grid>
                   </Box>
