@@ -77,7 +77,7 @@ const Chat = () => {
       .then((response) => {
         console.log(response.data.queries);
         setSearchItems(response.data.queries);
-        setInputBar(response.data.queries.slice(-20));
+        setInputBar(response.data.queries);
       })
       .catch((error) => {
         console.log(error);
@@ -99,7 +99,7 @@ const Chat = () => {
       });
       setInputBar(newSearchList);
     } else {
-      setInputBar(searchItems.slice(-20));
+      setInputBar(searchItems);
     }
   };
   const getSearchTerm = () => {
@@ -180,9 +180,7 @@ const Chat = () => {
     getSearchList();
   }, []);
 
-  async function getAutoReply(text){
-    setMessages(text);
-  };
+  
 
   const send = async (text) => {
     const newMessages = messages.concat(
@@ -214,6 +212,7 @@ const Chat = () => {
               />
             </Grid>
             <Divider />
+           <Box sx={{ display:'flex',flexDirection:'column',height:660,overflow:'hidden', overflowY:"scroll"}}>
             <List>
               {inputBar ? (
                 inputBar.map((item) => (
@@ -239,6 +238,7 @@ const Chat = () => {
                 <div></div>
               )}
             </List>
+            </Box>
           </Grid>
           <Grid item xs={9}>
             <div className={styles.chatbot}>
