@@ -2,11 +2,23 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
+import Box from '@material-ui/core';
 import Divider from '@material-ui/core/Divider';
-import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import List from '@material-ui/core/List';
+import API from './ChatbotApi';
+import styles from '../styles/main.module.css';
+import BotMessage from './BotMessage';
+import UserMessage from './UserMessage';
+import Messages from './Messages';
+import Input from './Input';
+import Header from './Header';
+import axios from 'axios';
+import { useRouter } from 'next/router';
+import InputBase from '@mui/material/InputBase';
+import { ScrollArea, Notification } from '@mantine/core';
+
+import TextField from '@material-ui/core/TextField';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -15,27 +27,14 @@ import Fab from '@material-ui/core/Fab';
 import SendIcon from '@material-ui/icons/Send';
 import Card from '@mui/material/Card';
 import ReactDOM from 'react-dom';
-import API from './ChatbotApi';
-import styles from '../styles/main.module.css';
-import BotMessage from './BotMessage';
-import UserMessage from './UserMessage';
-import Messages from './Messages';
-import Input from './Input';
 import { useState, useEffect, useRef } from 'react';
-import Header from './Header';
-import axios from 'axios';
 import Chip from '@material-ui/core/Chip';
-import { useRouter } from 'next/router';
 import ContentPasteGoIcon from '@mui/icons-material/Bolt';
-import InputBase from '@mui/material/InputBase';
 
 const useStyles = makeStyles({
-  table: {
-    minWidth: 650,
-  },
   chatSection: {
     width: '100%',
-    height: '80vh',
+    height: '75vh',
   },
   headBG: {
     backgroundColor: '#e0e0e0',
@@ -44,7 +43,7 @@ const useStyles = makeStyles({
     borderRight: '1px solid #e0e0e0',
   },
   messageArea: {
-    height: '70vh',
+    height: '75vh',
     overflowY: 'auto',
   },
 });
@@ -57,8 +56,8 @@ const Chat = () => {
   const [inputBar, setInputBar] = useState([]);
   const [replyMessage, setReplyMessage] = useState(null);
   const [banglishwords, setBanglishWords] = useState([]);
-  const [banglawords,setBanglaWords]=useState([]);
-  const [banglapercentage,setBanglaPercentate]=useState(null);
+  const [banglawords, setBanglaWords] = useState([]);
+  const [banglapercentage, setBanglaPercentate] = useState(null);
   const [percentage, setPercentage] = useState(null);
   const arr = [];
   const [id, setId] = useState(null);
@@ -117,7 +116,7 @@ const Chat = () => {
         setPercentage(res.ratio1);
         setBanglaWords(res.bangla);
         setBanglaPercentate(res.ratio2);
-        console.log({rat2: res.ratio2})
+        console.log({ rat2: res.ratio2 });
       })
       .catch((error) => {
         if (error.response) {
@@ -180,8 +179,6 @@ const Chat = () => {
     getSearchList();
   }, []);
 
-
-
   const send = async (text) => {
     const newMessages = messages.concat(
       <UserMessage key={messages.length + 1} text={text} />,
@@ -197,90 +194,94 @@ const Chat = () => {
   };
 
   return (
-    <div>
-      <div>
-        <Grid container component={Paper} className={classes.chatSection}>
-          <Grid item xs={3} className={classes.borderRight500}>
-            <Divider />
-            <Grid item xs={12} style={{ padding: '10px' }}>
-              {/* <TextField id="outlined-basic-email" label="Search from history" variant="outlined" fullWidth ref={inputBar} onChange={getSearchTerm}/> */}
-              <InputBase
-                type="text"
-                placeholder="search"
-                value={values.fields}
-                onChange={handleChange('fields')}
-              />
-            </Grid>
-            <Divider />
-           <Box sx={{ display:'flex',flexDirection:'column',height:660,overflow:'hidden', overflowY:"scroll"}}>
-            <List>
-              {inputBar ? (
-                inputBar.map((item) => (
-                  <Box sx={{ marginBottom: '6px', marginLeft: '20px' }}>
-                    <Grid
-                      container
-                      marginBottom={30}
-                      spacing={2}
-                      sx={{
-                        alignItems: 'center',
-                        mx: 'auto',
-                        marginBottom: '30px',
-                      }}
-                    >
-                      {/* <Grid><ContentPasteGoIcon sx={{ color:'#607D8B'}}/></Grid> */}
-                      <Grid>
-                        <Typography onClick={() => {navigator.clipboard.writeText(item.body)}}>{item.body}</Typography>
-                      </Grid>
-                    </Grid>
-                  </Box>
-                ))
-              ) : (
-                <div></div>
-              )}
-            </List>
-            </Box>
-          </Grid>
-          <Grid item xs={9}>
-            <div className={styles.chatbot}>
-              <Header />
-              <Messages messages={messages} />
-              <Input onSend={send} />
-            </div>
-          </Grid>
-        </Grid>
-      </div>
-      <Box sx={{ alignContent:'center',alignItems:'center',mx:'auto'}}>
-      <Grid container spacing={2} sx={{ alignItems: 'center', mx: 'auto' }}>
-        <Grid item sx={2}>
+    <div content="width=device-width, initial-scale=1.0, height=device-height">
+      <Grid container spacing={4}>
+        <Grid item xs="auto">
           {percentage ? (
-            <Chip label={percentage + '% Banglish'} />
+            <Notification title={percentage + '% Banglish'} />
           ) : (
-            <div></div>
+            <></>
           )}
         </Grid>
-        <Grid item sx={2}>
+        <Grid item xs="auto">
           {banglapercentage ? (
-            <Chip label={banglapercentage + '% Bangla'} />
+            <Notification title={banglapercentage + '% Bangla'} />
           ) : (
-            <div></div>
+            <></>
           )}
         </Grid>
-        <Grid item sx={2}>
-          {(percentage>0) ? (
-            <Chip label={'Banglish words: ' + banglishwords} color="primary" />
+        <Grid item xs="auto">
+          {percentage > 0 ? (
+            <Notification title={'Banglish words: ' + banglishwords} />
           ) : (
-            <div></div>
+            <></>
           )}
         </Grid>
-        <Grid item sx={2}>
-          {(banglapercentage>0)>0 ? (
-            <Chip label={'Bangla words: ' + banglawords} color="primary" />
+        <Grid item xs="auto">
+          {banglapercentage > 0 ? (
+            <Notification title={'Bangla words: ' + banglawords} />
           ) : (
-            <div></div>
+            <></>
           )}
         </Grid>
       </Grid>
-      </Box>
+      <Grid container component={Paper} className={classes.chatSection}>
+        <Grid item xs={3} className={classes.borderRight500}>
+          <Divider />
+          <Grid item xs={12} style={{ padding: '10px' }}>
+            {/* <TextField id="outlined-basic-email" label="Search from history" variant="outlined" fullWidth ref={inputBar} onChange={getSearchTerm}/> */}
+            <InputBase
+              type="text"
+              placeholder="search"
+              value={values.fields}
+              onChange={handleChange('fields')}
+            />
+          </Grid>
+          <Divider />
+          <ScrollArea h="65vh">
+            <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+              <List>
+                {inputBar ? (
+                  inputBar.map((item) => (
+                    <Box sx={{ marginBottom: '6px', marginLeft: '20px' }}>
+                      <Grid
+                        container
+                        marginBottom={30}
+                        spacing={2}
+                        sx={{
+                          alignItems: 'center',
+                          mx: 'auto',
+                          marginBottom: '30px',
+                        }}
+                      >
+                        {/* <Grid><ContentPasteGoIcon sx={{ color:'#607D8B'}}/></Grid> */}
+                        <Grid>
+                          <Typography
+                            onClick={() => {
+                              navigator.clipboard.writeText(item.body);
+                            }}
+                          >
+                            {item.body}
+                          </Typography>
+                        </Grid>
+                      </Grid>
+                    </Box>
+                  ))
+                ) : (
+                  <div></div>
+                )}
+              </List>
+            </Box>
+          </ScrollArea>
+        </Grid>
+        <Grid item xs={9}>
+          <div className={styles.chatbot}>
+            <Header />
+            <Messages messages={messages} />
+            <Input onSend={send} />
+          </div>
+        </Grid>
+      </Grid>
     </div>
   );
 };
