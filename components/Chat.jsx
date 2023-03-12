@@ -181,8 +181,6 @@ const Chat = () => {
     getSearchList();
   }, []);
 
-
-
   const send = async (text) => {
     const newMessages = messages.concat(
       <UserMessage key={messages.length + 1} text={text} />,
