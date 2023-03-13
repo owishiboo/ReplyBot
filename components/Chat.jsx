@@ -223,7 +223,7 @@ const Chat = () => {
             </List></ScrollArea>
             
           </Grid>
-          <Grid item xs={9} sx={{marginTop:"2px"}}>
+          <Grid item xs={9} sx={{padding:"5px"}}>
             <div className={styles.chatbot}>
               <Header />
               <Messages messages={messages} />
