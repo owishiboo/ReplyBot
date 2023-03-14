@@ -1,6 +1,14 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import {Box, Grid, Divider, Typography, List, Paper, Chip} from '@material-ui/core';
+import {
+  Box,
+  Grid,
+  Divider,
+  Typography,
+  List,
+  Paper,
+  Chip,
+} from '@material-ui/core';
 import API from './ChatbotApi';
 import styles from '../styles/main.module.css';
 import BotMessage from './BotMessage';
@@ -43,8 +51,8 @@ const Chat = () => {
   const [inputBar, setInputBar] = useState([]);
   const [replyMessage, setReplyMessage] = useState(null);
   const [banglishwords, setBanglishWords] = useState([]);
-  const [banglawords,setBanglaWords]=useState([]);
-  const [banglapercentage,setBanglaPercentate]=useState(null);
+  const [banglawords, setBanglaWords] = useState([]);
+  const [banglapercentage, setBanglaPercentate] = useState(null);
   const [percentage, setPercentage] = useState(null);
   const arr = [];
   const [id, setId] = useState(null);
@@ -103,7 +111,7 @@ const Chat = () => {
         setPercentage(res.ratio1);
         setBanglaWords(res.bangla);
         setBanglaPercentate(res.ratio2);
-        console.log({rat2: res.ratio2})
+        console.log({ rat2: res.ratio2 });
       })
       .catch((error) => {
         if (error.response) {
@@ -116,7 +124,7 @@ const Chat = () => {
 
   useEffect(() => {
     getSearchList();
-  }, [id, router]);
+  }, [messages]);
   // async function getSearchList(){
   //   const { pid } = router.query
   //   const list = {
@@ -163,7 +171,7 @@ const Chat = () => {
     }
     loadWelcomeMessage();
     setId(router.query);
-    getSearchList();
+    // getSearchList();
   }, []);
 
   const send = async (text) => {
@@ -196,34 +204,41 @@ const Chat = () => {
               />
             </Grid>
             <Divider />
-            <ScrollArea h="70vh"><List>
-              {inputBar ? (
-                inputBar.map((item) => (
-                  <Box sx={{ marginBottom: '6px', marginLeft: '20px' }}>
-                    <Grid
-                      container
-                      marginBottom={30}
-                      spacing={2}
-                      sx={{
-                        alignItems: 'center',
-                        mx: 'auto',
-                        marginBottom: '30px',
-                      }}
-                    >
-                      {/* <Grid><ContentPasteGoIcon sx={{ color:'#607D8B'}}/></Grid> */}
-                      <Grid>
-                        <Typography onClick={() => {navigator.clipboard.writeText(item.body)}}>{item.body}</Typography>
+            <ScrollArea h="70vh">
+              <List>
+                {inputBar ? (
+                  inputBar.map((item) => (
+                    <Box sx={{ marginBottom: '6px', marginLeft: '20px' }}>
+                      <Grid
+                        container
+                        marginBottom={30}
+                        spacing={2}
+                        sx={{
+                          alignItems: 'center',
+                          mx: 'auto',
+                          marginBottom: '30px',
+                        }}
+                      >
+                        {/* <Grid><ContentPasteGoIcon sx={{ color:'#607D8B'}}/></Grid> */}
+                        <Grid>
+                          <Typography
+                            onClick={() => {
+                              navigator.clipboard.writeText(item.body);
+                            }}
+                          >
+                            {item.body}
+                          </Typography>
+                        </Grid>
                       </Grid>
-                    </Grid>
-                  </Box>
-                ))
-              ) : (
-                <div></div>
-              )}
-            </List></ScrollArea>
-            
+                    </Box>
+                  ))
+                ) : (
+                  <div></div>
+                )}
+              </List>
+            </ScrollArea>
           </Grid>
-          <Grid item xs={9} sx={{padding:"5px"}}>
+          <Grid item xs={9} sx={{ padding: '5px' }}>
             <div className={styles.chatbot}>
               <Header />
               <Messages messages={messages} />
@@ -232,37 +247,40 @@ const Chat = () => {
           </Grid>
         </Grid>
       </div>
-      <Box sx={{ alignContent:'center',alignItems:'center',mx:'auto'}}>
-      <Grid container spacing={2} sx={{ alignItems: 'center', mx: 'auto' }}>
-        <Grid item sx={2}>
-          {percentage ? (
-            <Chip label={percentage + '% Banglish'} />
-          ) : (
-            <div></div>
-          )}
+      <Box sx={{ alignContent: 'center', alignItems: 'center', mx: 'auto' }}>
+        <Grid container spacing={2} sx={{ alignItems: 'center', mx: 'auto' }}>
+          <Grid item sx={2}>
+            {percentage ? (
+              <Chip label={percentage + '% Banglish'} />
+            ) : (
+              <div></div>
+            )}
+          </Grid>
+          <Grid item sx={2}>
+            {banglapercentage ? (
+              <Chip label={banglapercentage + '% Bangla'} />
+            ) : (
+              <div></div>
+            )}
+          </Grid>
+          <Grid item sx={2}>
+            {percentage > 0 ? (
+              <Chip
+                label={'Banglish words: ' + banglishwords}
+                color="primary"
+              />
+            ) : (
+              <div></div>
+            )}
+          </Grid>
+          <Grid item sx={2}>
+            {banglapercentage > 0 > 0 ? (
+              <Chip label={'Bangla words: ' + banglawords} color="primary" />
+            ) : (
+              <div></div>
+            )}
+          </Grid>
         </Grid>
-        <Grid item sx={2}>
-          {banglapercentage ? (
-            <Chip label={banglapercentage + '% Bangla'} />
-          ) : (
-            <div></div>
-          )}
-        </Grid>
-        <Grid item sx={2}>
-          {(percentage>0) ? (
-            <Chip label={'Banglish words: ' + banglishwords} color="primary" />
-          ) : (
-            <div></div>
-          )}
-        </Grid>
-        <Grid item sx={2}>
-          {(banglapercentage>0)>0 ? (
-            <Chip label={'Bangla words: ' + banglawords} color="primary" />
-          ) : (
-            <div></div>
-          )}
-        </Grid>
-      </Grid>
       </Box>
     </div>
   );
